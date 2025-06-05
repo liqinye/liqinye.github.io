@@ -1,34 +1,32 @@
-/* Custom styles for the website */
 
-/* Change font for name in header */
 .navbar-brand.title {
   font-family: 'Lusitana', serif !important;
 }
 
-/* Change font for name in about page */
+
 .post-title {
   font-family: 'Lusitana', serif !important;
-  font-size: 3rem !important; /* Adjust this value to change about page name size */
+  font-size: 3rem !important;
 }
 
-/* Custom theme color override */
+
 :root {
-  --global-theme-color: #0ABAB5 !important; /* Tiffany blue */
+  --global-theme-color: #0ABAB5 !important; 
   --global-hover-color: #0ABAB5 !important;
 }
 
-/* For dark mode */
+
 html[data-theme="dark"] {
-  --global-theme-color: #0ABAB5 !important; /* Tiffany blue */
+  --global-theme-color: #0ABAB5 !important; 
   --global-hover-color: #0ABAB5 !important;
 }
 
-/* Social icons spacing */
+
 .contact-icons {
   display: flex;
-  gap: 4rem;  /* Increased gap between icons */
-  justify-content: center;  /* Center the icons */
-  margin: 1rem 0;  /* Add some vertical margin */
+  gap: 4rem;  
+  justify-content: center; 
+  margin: 1rem 0; 
 }
 
 .periodical b {
@@ -72,7 +70,7 @@ html[data-theme="dark"] {
 
 /* Style arXiv button */
 .links a[href*="arxiv.org"] {
-  background-color: #ff9292 !important;  /* arXiv red color */
+  background-color: #ff9292 !important;
   color: white !important;
   border-radius: 4px !important;
   padding: 4px 12px !important;
@@ -82,7 +80,7 @@ html[data-theme="dark"] {
 }
 
 .links a[href*="arxiv.org"]:hover {
-  background-color: #e67e7e !important;  /* Darker red on hover */
+  background-color: #e67e7e !important; 
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
@@ -92,7 +90,7 @@ html[data-theme="dark"] {
 .links a[href*="gitlab.com"],
 .links a[href*="bitbucket.org"],
 .links a[href*="code"] {
-  background-color: #ae75f4 !important;  /* Deep purple that complements arXiv red */
+  background-color: #ae75f4 !important; 
   color: white !important;
   border-radius: 4px !important;
   padding: 4px 12px !important;
@@ -105,7 +103,7 @@ html[data-theme="dark"] {
 .links a[href*="gitlab.com"]:hover,
 .links a[href*="bitbucket.org"]:hover,
 .links a[href*="code"]:hover {
-  background-color: #8b50c9 !important;  /* Darker purple on hover */
+  background-color: #8b50c9 !important;  
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
@@ -154,7 +152,7 @@ html[data-theme="dark"] {
 }
 
 .links .website-btn i {
-  font-size: 1.5em !important;  /* Match GitHub icon size */
+  font-size: 1.5em !important;  
   vertical-align: middle !important;
   line-height: 1 !important;
 }
@@ -165,7 +163,6 @@ html[data-theme="dark"] {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
 
-/* Increase font size for all publication text */
 .publications {
   font-size: 11pt !important;
 }
@@ -173,7 +170,6 @@ html[data-theme="dark"] {
 .post h2 {
   font-family: 'Nunito', sans-serif !important;
   font-size: 25pt !important;
-  /* font-weight: 400 !important; */
 }
 
 body {
@@ -273,7 +269,7 @@ a {
 
 .teaching-item h3 {
   font-size: 1.1em;
-  font-weight: 600; /* Make course title bold */
+  font-weight: 600; 
   margin-bottom: 0.2rem;
 }
 
