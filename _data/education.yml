@@ -1,0 +1,15 @@
+- institution: Georgia Institute of Technology
+  department: School of Computer Science and Engineering
+  degrees:
+    - degree: Ph.D. in Machine Learning
+      year: 2024 - Present
+    - degree: M.S. in Computer Science
+      year: 2023 - 2025
+
+- institution: University of California, Irvine
+  department: Donald Bren School of Information and Computer Sciences
+  degrees:
+    - degree: B.S. in Computer Science
+      year: 2019 - 2023
+  description: ICS Honor Student
+  

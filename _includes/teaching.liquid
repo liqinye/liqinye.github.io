@@ -1,0 +1,13 @@
+<!-- _includes/teaching.liquid -->
+
+<div style="margin-top: 1rem;" class="teaching">
+  {% for entry in site.data.teaching %}
+    <div class="teaching-item">
+      <h3>{{ entry.course_title }}</h3>
+      <p><strong>{{ entry.role }}</strong>, {{ entry.year_semester }}, {{ entry.institution }}</p>
+      {% if entry.description %}
+        <div class="description">{{ entry.description | markdownify }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

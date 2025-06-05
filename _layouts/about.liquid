@@ -5,7 +5,7 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.first_name }} {{ site.middle_name }}
         {{ site.last_name }}
       {% else %}
         {{ site.title }}
@@ -38,31 +38,78 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix">
+      {{ content }}
+      <!-- Social -->
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
+      <div style="margin-top: 0.5rem;">
+        <h2>
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      </div>
     {% endif %}
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <div style="margin-top: 1.5rem;">
+        <h2>
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
+        </h2>
+        {% include selected_papers.liquid %}
+      </div>
     {% endif %}
+
+    <!-- Education -->
+    {% if page.education and page.education.enabled %}
+      <div style="margin-top: 1.5rem;">
+        <h2>Educations</h2>
+        <div style="margin-top: 1rem;" class="education {% if page.education.scrollable %}scrollable{% endif %}">
+          {% for entry in site.data.education limit:page.education.limit %}
+            <div class="education-item">
+              <div class="education-text">
+                <h3 class="institution">{{ entry.institution }}</h3>
+                <div class="department">{{ entry.department }}</div>
+                {% for degree in entry.degrees %}
+                  <div class="degree">
+                    <span class="degree-type">{{ degree.degree | split: ' in ' | first }}</span> in {{ degree.degree | split: ' in ' | last }} ({{ degree.year }})
+                  </div>
+                {% endfor %}
+                {% if entry.description %}
+                  <div class="description">{{ entry.description | replace: "ICS Honor Student", "<strong>ICS Honor Student</strong>" }}</div>
+                {% endif %}
+              </div>
+              <div class="institution-logo-container">
+                {% if entry.institution contains "Georgia" %}
+                  <img src="{{ '/assets/img/gt-logo.png' | relative_url }}" alt="Georgia Tech Logo" class="institution-logo gt-logo">
+                {% elsif entry.institution contains "California" %}
+                  <img src="{{ '/assets/img/uci-logo.png' | relative_url }}" alt="UC Irvine Logo" class="institution-logo uci-logo">
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Teaching -->
+    <div style="margin-top: -1rem;">
+      <h2>Teaching</h2>
+      {% include teaching.liquid %}
+    </div>
+
+    <!-- Services -->
+    <div style="margin-top: 1.5rem;">
+      <h2>Services</h2>
+      {% include services.liquid %}
+    </div>
 
     <!-- Social -->
     {% if page.social %}

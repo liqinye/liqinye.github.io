@@ -1,0 +1,9 @@
+<!-- _includes/services.liquid -->
+
+<div class="services">
+  {% for entry in site.data.services %}
+    <div class="service-item">
+      <p><strong>{{ entry.role }}</strong>: {{ entry.conference }}</p>
+    </div>
+  {% endfor %}
+</div> 
