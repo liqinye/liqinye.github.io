@@ -34,7 +34,7 @@ education:
 
 I am a first-year Machine Learning Ph.D. student at Georgia Tech ([ML@GT](https://ml.gatech.edu/)), advised by [Prof. Sudheer Chava](https://www.scheller.gatech.edu/directory/faculty/chava/index.html) and [Prof. Chao Zhang](http://chaozhang.org/). Previously, I received my B.S. degree in Computer Science at [University of California, Irvine](https://www.uci.edu/), where I have a fortune to work with [Prof. Stephan Mandt](https://www.stephanmandt.com/) on adapting Diffusion Models for climate system simulations.
 
-My primary research interests encompass three core areas: (1) multi‑objective alignment of LLMs to meet diverse user demands, (2) enhancing the efficiency and efficacy of learning from LLM‑synthesized data, (3) aligning LLMs with domain‑specific knowledge.
+My primary research interests encompass three core areas: (1) LLM reasoning and agent (2) multi‑objective alignment of LLMs to meet diverse user demands, (3) enhancing the efficiency of learning from LLM‑synthesized data.
 
 I am actively engaged in cutting-edge research on LLM and welcome collaborators with expertise in this domain. Feel free to contact me at `liqiny at gatech dot edu` if you have any questions about my research or want to collaborate.
 
