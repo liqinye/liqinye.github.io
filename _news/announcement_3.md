@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One [co-author paper](https://arxiv.org/abs/2505.17048) is accepted to NeurIPS 2025. We develop a framework and dataset decoding global central bank communications. 
+One [co-author paper](https://arxiv.org/abs/2505.17048) is accepted to NeurIPS 2025 Dataset & Benchmark Track. We develop a framework and dataset decoding global central bank communications. 
