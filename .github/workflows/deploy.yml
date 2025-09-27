@@ -30,6 +30,7 @@ on:
       - "!FAQ.md"
       - "!INSTALL.md"
       - "!README.md"
+      - "robots.txt"
   pull_request:
     branches:
       - master
@@ -59,6 +60,7 @@ on:
       - "!FAQ.md"
       - "!INSTALL.md"
       - "!README.md"
+      - "robots.txt" 
   workflow_dispatch:
 
 permissions:
