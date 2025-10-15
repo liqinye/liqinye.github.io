@@ -1,6 +1,20 @@
 ---
 ---
 
+@inproceedings{ye2025preciseattributeintensitycontrol,
+      title={Precise Attribute Intensity Control in Large Language Models via Targeted Representation Editing}, 
+      author={Rongzhi Zhang* and Liqin Ye* and Yuzhao Heng and Xiang Chen and Tong Yu and Lingkai Kong and Sudheer Chava and Chao Zhang},
+      year={2025},
+      arxiv={2510.12121},
+      url={https://arxiv.org/abs/2510.12121}, 
+      booktitle={Preprint. Under Review},
+      abbr={ICLR},
+      selected={true},
+      code={https://github.com/Pre-Control/pre-control},
+      abstract={Precise attribute intensity control--generating Large Language Model (LLM) outputs with specific, user-defined attribute intensities--is crucial for AI systems adaptable to diverse user expectations. Current LLM alignment methods, however, typically provide only directional or open-ended guidance, failing to reliably achieve exact attribute intensities. We address this limitation with three key designs: (1) reformulating precise attribute intensity control as a target-reaching problem, rather than simple maximization; (2) training a lightweight value function via temporal-difference learning to predict final attribute intensity scores from partial generations, thereby steering LLM outputs; and (3) employing gradient-based interventions on hidden representations to navigate the model precisely towards specific attribute intensity targets. Our method enables fine-grained, continuous control over attribute intensities, moving beyond simple directional alignment. Experiments on LLaMA-3.2-3b and Phi-4-mini confirm our method's ability to steer text generation to user-specified attribute intensities with high accuracy. Finally, we demonstrate efficiency enhancements across three downstream tasks: preference data synthesis, Pareto frontier approximation and optimization, and distillation of aligned behaviors for intervention-free inference.},
+      under_review={true}
+}
+
 @inproceedings{ye2025calibratingpretrainedlanguageclassifiers,
       title={Calibrating Pre-trained Language Classifiers on LLM-generated Noisy Labels via Iterative Refinement}, 
       author={Liqin Ye and Agam Shah and Chao Zhang and Sudheer Chava},
@@ -12,17 +26,6 @@
       code={https://github.com/gtfintechlab/SiDyP},
       selected={true},
       abstract={The traditional process of creating labeled datasets is labor-intensive and expensive. Recent breakthroughs in open-source large language models (LLMs) have opened up a new avenue in generating labeled datasets automatically for various natural language processing (NLP) tasks, providing an alternative to such an expensive annotation process. However, the reliability of such auto-generated labels remains a significant concern due to inherent inaccuracies. When learning from noisy labels, the model's generalization is likely to be harmed as it is prone to overfit to those label noises. While previous studies in learning from noisy labels mainly focus on synthetic noise and real-world noise, LLM-generated label noise receives less attention. In this paper, we propose SiDyP: Simplex Label Diffusion with Dynamic Prior to calibrate the classifier's prediction, thus enhancing its robustness towards LLM-generated noisy labels. SiDyP retrieves potential true label candidates by neighborhood label distribution in text embedding space and iteratively refines noisy candidates using a simplex diffusion model. Our framework can increase the performance of the BERT classifier fine-tuned on both zero-shot and few-shot LLM-generated noisy label datasets by an average of 7.21\% and 7.30\% respectively. We demonstrate the effectiveness of SiDyP by conducting extensive benchmarking for different LLMs over a variety of NLP tasks.}
-}
-
-@inproceedings{ye2025preciseattributeintensitycontrol,
-      title={Precise Attribute Intensity Control in Large Language Models via Targeted Representation Editing}, 
-      author={Rongzhi Zhang* and Liqin Ye* and Yuzhao Heng and Xiang Chen and Tong Yu and Lingkai Kong and Sudheer Chava and Chao Zhang},
-      year={2025},
-      url={https://arxiv.org/abs/2505.19675}, 
-      booktitle={An arXiv version will be available soon},
-      abbr={NeurIPS},
-      selected={true},
-      under_review={true}
 }
 
 @inproceedings{shah2025reportedcutofflargelanguage,
