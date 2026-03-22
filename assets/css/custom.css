@@ -61,7 +61,7 @@ html[data-theme="dark"] {
 }
 
 /* Style arXiv icon */
-.links a[href*="arxiv.org"] .arxiv-icon {
+.links a[href*="arxiv"] .arxiv-icon {
   width: 1.55em !important;
   height: 1.55em !important;
   vertical-align: middle !important;
@@ -69,7 +69,7 @@ html[data-theme="dark"] {
 }
 
 /* Style arXiv button */
-.links a[href*="arxiv.org"] {
+.links a[href*="arxiv"] {
   background-color: #ff9292 !important;
   color: white !important;
   border-radius: 4px !important;
@@ -79,8 +79,8 @@ html[data-theme="dark"] {
   font-weight: 500 !important;
 }
 
-.links a[href*="arxiv.org"]:hover {
-  background-color: #e67e7e !important; 
+.links a[href*="arxiv"]:hover {
+  background-color: #e67e7e !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
