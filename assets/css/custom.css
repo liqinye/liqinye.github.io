@@ -86,11 +86,11 @@ html[data-theme="dark"] {
 }
 
 /* Style code button */
-.links a[href*="github.com"],
-.links a[href*="gitlab.com"],
-.links a[href*="bitbucket.org"],
+.links a[href*="github"],
+.links a[href*="gitlab"],
+.links a[href*="bitbucket"],
 .links a[href*="code"] {
-  background-color: #ae75f4 !important; 
+  background-color: #ae75f4 !important;
   color: white !important;
   border-radius: 4px !important;
   padding: 4px 12px !important;
@@ -99,16 +99,17 @@ html[data-theme="dark"] {
   font-weight: 500 !important;
 }
 
-.links a[href*="github.com"]:hover,
-.links a[href*="gitlab.com"]:hover,
-.links a[href*="bitbucket.org"]:hover,
+.links a[href*="github"]:hover,
+.links a[href*="gitlab"]:hover,
+.links a[href*="bitbucket"]:hover,
 .links a[href*="code"]:hover {
-  background-color: #8b50c9 !important;  
+  background-color: #8b50c9 !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
 
 /* Style GitHub icon */
+.links a[href*="github"] .github-icon,
 .links a[href*="code"] .github-icon {
   width: 1.4em !important;
   height: 1.4em !important;
