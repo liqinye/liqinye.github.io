@@ -32,7 +32,7 @@ education:
   limit: 5
 ---
 
-I am a Machine Learning Ph.D. student at Georgia Tech ([ML@GT](https://ml.gatech.edu/)), advised by [Dr. Chao Zhang](http://chaozhang.org/) and [Dr. Sudheer Chava](https://www.scheller.gatech.edu/directory/faculty/chava/index.html). Previously, I received my B.S. degree in Computer Science at [University of California, Irvine](https://www.uci.edu/), where I have a fortune to work with [Dr. Stephan Mandt](https://www.stephanmandt.com/) on adapting Diffusion Models for climate system simulations.
+I am a Machine Learning Ph.D. candidate at Georgia Tech ([ML@GT](https://ml.gatech.edu/)), advised by [Dr. Chao Zhang](http://chaozhang.org/) and [Dr. Sudheer Chava](https://www.scheller.gatech.edu/directory/faculty/chava/index.html). Previously, I received my B.S. degree in Computer Science at [University of California, Irvine](https://www.uci.edu/), where I have a fortune to work with [Dr. Stephan Mandt](https://www.stephanmandt.com/) on adapting Diffusion Models for climate system simulations.
 
 My primary research interests encompass three core areas: (1) LLM reasoning and agent (2) multi‑objective alignment of LLMs to meet diverse user demands, (3) enhancing the efficiency of learning from LLM‑synthesized data.
 
