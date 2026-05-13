@@ -1,15 +1,17 @@
 ---
 ---
 
-@inproceedings{ye2026evolutionarytaskdiscovery,
-      title={Evolutionary Task Discovery: Advancing Reasoning Frontiers via Skill Composition and Complexity Scaling},
-      author={Liqin Ye and Yanbin Yin and Michael Galarnyk and Yuzhao Heng and Xiang Chen and Tong Yu and Sudheer Chava and Chao Zhang},
+@inproceedings{ye2026evolutionarytaskdiscoveryadvancing,
+      title={Evolutionary Task Discovery: Advancing Reasoning Frontiers via Skill Composition and Complexity Scaling}, 
+      author={Liqin Ye and Yanbin Yin and Michael Galarnyk and Yuzhao Heng and Sudheer Chava and Chao Zhang},
       year={2026},
+      arxiv={2605.11666},
+      url={https://arxiv.org/abs/2605.11666},
       booktitle={Preprint. Under Review},
-      abbr={ICML},
+      abbr={NeurIPS},
       code={https://github.com/liqinye/EvoTD},
       selected={true},
-      abstract={The reasoning frontier of Large Language Models (LLMs) has advanced significantly through modern post-training paradigms (e.g., Reinforcement Learning from Verifiable Rewards (RLVR)). However, the efficacy of these methods remains fundamentally constrained by the diversity and complexity of the training data. One practical solution is data synthesis; yet, prevalent methods relying on unstructured mutation or exploration suffer from homogeneity collapse, failing to systematically expand the reasoning frontier. To overcome this, we propose Evolutionary Task Discovery (EvoTD), a framework that treats data synthesis as a directed search over a dual-axis manifold of Algorithmic Skills and Complexity Attributes. We introduce structured evolutionary operators to navigate this space: a Crossover operator that synthesizes novel skill compositions to enhance diversity, and a Parametric Mutation operator that scales structural constraints (e.g., input size, tree depth) to drive robust generalization. Crucially, we integrate a dynamic Zone of Proximal Development filter, ensuring tasks lie within the learnable region of the model. Empirically, EvoTD delivers substantial gains on Qwen3-4B Thinking, with 5.7% gains on code benchmarks and 6.4\% on math benchmarks, demonstrating that structured evolutionary curricula can effectively support reasoning improvement.},
+      abstract={The reasoning frontier of Large Language Models (LLMs) has advanced significantly through modern post-training paradigms (e.g., Reinforcement Learning from Verifiable Rewards (RLVR)). However, the efficacy of these methods remains fundamentally constrained by the diversity and complexity of the training data. One practical solution is data synthesis; yet, prevalent methods relying on unstructured mutation or exploration suffer from homogeneity collapse, failing to systematically expand the reasoning frontier. To overcome this, we propose Evoutionary Task Discovery (EvoTD), a framework that treats data synthesis as a directed search over a dual-axis manifold of Algorithmic Skills and Complexity Attributes. We introduce structured evolutionary operators to navigate this space: a Crossover operator that synthesizes novel skill compositions to enhance diversity, and a Parametric Mutation operator that scales structural constraints (e.g., input size, tree depth) to drive robust generalization. Crucially, we integrate a dynamic Zone of Proximal Development filter, ensuring tasks lie within the learnable region of the model. Empirically, EvoTD delivers substantial reasoning gains that generalize consistently across model architectures, pretraining regimes, and scales, demonstrating that structured evolutionary curricula can effectively support reasoning improvement.},
       under_review={true}
 }
 
