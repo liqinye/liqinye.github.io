@@ -57,6 +57,21 @@
       abstract={Large Language Models (LLMs) are frequently utilized as sources of knowledge for question-answering. While it is known that LLMs may lack access to real-time data or newer data produced after the model's cutoff date, it is less clear how their knowledge spans across historical information. In this study, we assess the breadth of LLMs' knowledge using financial data of U.S. publicly traded companies by evaluating more than 197k questions and comparing model responses to factual data. We further explore the impact of company characteristics, such as size, retail investment, institutional attention, and readability of financial filings, on the accuracy of knowledge represented in LLMs. Our results reveal that LLMs are less informed about past financial performance, but they display a stronger awareness of larger companies and more recent information. Interestingly, at the same time, our analysis also reveals that LLMs are more likely to hallucinate for larger companies, especially for data from more recent years. We will make the code, prompts, and model outputs public upon the publication of the work.}
 }
 
+@inproceedings{galarnyk2026ipominetoolkitdatasetsection,
+      title={IPO-Mine: A Toolkit and Dataset for Section-Structured Analysis of Long, Multimodal IPO Documents},
+      author={Michael Galarnyk and Siddharth Lohani and Vidhyakshaya Kannan and Sagnik Nandi and Aman Patel and Liqin Ye and Arnav Hiray and Rutwik Routu and Prasun Banerjee and Siddhartha Somani and Sudheer Chava},
+      year={2026},
+      arxiv={2605.28714},
+      url={https://arxiv.org/abs/2605.28714},
+      booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+      abbr={KDD},
+      code={https://github.com/gtfintechlab/IPO-Mine/},
+      huggingface={https://huggingface.co/collections/gtfintechlab/ipo-mine},
+      website={https://www.ipomine-demo.siddharthlohani.dev/},
+      selected={true},
+      abstract={An Initial Public Offering (IPO) filing is a document released when a private firm goes public, allowing individual (retail) investors to purchase its shares. These filings describe a firm's business, financials, and risks and are long, multimodal documents with narrative text and images. Despite their importance to financial markets, there is no large-scale, standardized dataset or benchmark for studying IPO filings with modern language and multimodal models. These documents pose significant challenges: filings frequently exceed 500,000 tokens and lack consistent structural organization. We introduce the IPO-Toolkit, an open-source framework for downloading and parsing IPO filings into standardized section-structured text and extracted images. The toolkit segments filings, extracts embedded images, and produces structured outputs that enable large-scale, reproducible analysis workflows over long, multimodal documents. Using this infrastructure, we construct the IPO-Dataset, a large, section-structured, multimodal dataset covering more than 109,000 IPO filings and amendments from 1994 to 2026 and containing over 76,000 images. We establish structured evaluation tasks over extracted financial charts, including chart quality and misleadingness assessment. Our experiments show that state-of-the-art multimodal models often diverge from expert human judgments on these tasks, exposing alignment challenges in multimodal reasoning over long, real-world regulatory documents. Beyond benchmarking, the IPO-Dataset enables large-scale analysis of section-level textual variation and cross-industry differences in visual and textual disclosure practices. Our code, dataset, and website are publicly available under CC-BY-4.0.}
+}
+
 @inproceedings{shah2025wordsuniteworldunified,
       title={Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally}, 
       author={Agam Shah and Siddhant Sukhani and Huzaifa Pardawala and Saketh Budideti and Riya Bhadani and Rudra Gopal and Siddhartha Somani and Michael Galarnyk and Soungmin Lee and Arnav Hiray and Akshar Ravichandran and Eric Kim and Pranav Aluru and Joshua Zhang and Sebastian Jaskowski and Veer Guda and Meghaj Tarte and Liqin Ye and Spencer Gosden and Rutwik Routu and Rachel Yuh and Sloka Chava and Sahasra Chava and Dylan Patrick Kelly and Aiden Chiang and Harsit Mittal and Sudheer Chava},

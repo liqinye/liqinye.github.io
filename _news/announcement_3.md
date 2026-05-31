@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One [co-author paper](https://arxiv.org/abs/2505.17048) is accepted to NeurIPS 2025 Dataset & Benchmark Track. We develop a framework and dataset decoding global central bank communications. 
+[WCB](https://arxiv.org/abs/2505.17048) lands at NeurIPS 2025 D&B Track! We release the largest monetary policy corpus to date to benchmark how LLMs read what the world's central banks are really saying.

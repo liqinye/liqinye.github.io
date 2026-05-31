@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One [co-author paper](https://arxiv.org/pdf/2504.00042) is accepted to COLM 2025. We expose LLM's financial knowledge amnesia. 
+Our [COLM 2025 paper](https://arxiv.org/pdf/2504.00042) is out! We expose LLM's financial knowledge amnesia: forgetting historical financials while hallucinating most on companies they sound surest about.
