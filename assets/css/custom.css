@@ -164,6 +164,26 @@ html[data-theme="dark"] {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
 
+/* Normalize publication button boxes.
+   The buttons are inline-blocks sitting on the text baseline, so each one's
+   height came from whatever it contained (11.3px "Abs" text vs a 17.4px
+   Hugging Face icon). Different heights + vertical-align: middle meant no two
+   buttons in a row shared a top or bottom edge. Fix the box, center the
+   contents. */
+.links .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 26px !important;
+  padding: 0 12px !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.links a.abstract {
+  padding: 0 10px !important;
+}
+
 .publications {
   font-size: 11pt !important;
 }
@@ -268,10 +288,10 @@ a {
   line-height: 1.5;
 }
 
-.teaching-item h3 {
-  font-size: 1.1em;
-  font-weight: 600; 
-  margin-bottom: 0.2rem;
+/* One line per course: the course title carries the emphasis, so the default
+   paragraph margin is tightened to keep the list compact. */
+.teaching-item p {
+  margin-bottom: 0.35rem;
 }
 
 .teaching-item p strong {

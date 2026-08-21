@@ -1,7 +1,17 @@
 
-- course_title:  MGT 8803 AI for Finance
+- course_title: CS 7646 Machine Learning for Trading
   institution: Georgia Tech
-  year_semester: Fall 2025,Fall 2024
+  year_semester: Fall 2026
+  role: Graduate Teaching Assistant
+
+- course_title: CS 7641 Machine Learning
+  institution: Georgia Tech
+  year_semester: Spring 2026
+  role: Graduate Teaching Assistant
+
+- course_title: MGT 8803 AI for Finance
+  institution: Georgia Tech
+  year_semester: Fall 2025, Fall 2024
   role: Graduate Teaching Assistant
 
 - course_title: ICS 45C Programming in C++
