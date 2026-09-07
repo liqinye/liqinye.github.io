@@ -1,6 +1,35 @@
 ---
 ---
 
+@inproceedings{zhao2026llmspulseeconomyrealtime,
+      title={Can LLMs Take the Pulse of the Economy? A Real-Time Evaluation of LLM Nowcasts on Macroeconomic Indicators},
+      author={Xinyue Zhao and Ruiyi Zhang and Liqin Ye and Rui Cao and Pengtao Xie and Sudheer Chava},
+      year={2026},
+      arxiv={2608.30110},
+      url={https://arxiv.org/abs/2608.30110},
+      booktitle={Conference on Empirical Methods in Natural Language Processing Main Conference},
+      abbr={EMNLP Main},
+      code={https://github.com/LiveMacroEval/LiveMacroEval},
+      website={https://livemacroeval.github.io/},
+      selected={true},
+      abstract={Nowcasting headline macroeconomic indicators, i.e., estimating an indicator's value for the current reference period before its official release, is critical for monetary policy and financial markets, and central banks devote dedicated teams of expert economists to producing such estimates. Large language model (LLM) agents are a promising candidate for this task, combining broad world knowledge with real-time web search and supporting queries at higher frequency than institutional nowcasts. Evaluating their nowcasting capability is, however, challenging: headline indicators such as GDP and CPI are widely reported and likely memorized during pretraining, so any evaluation on historical releases is vulnerable to data contamination. To address this, we introduce LiveMacroEval, a live, contamination-resistant benchmark in which LLM agents produce hourly nowcasts for sixteen major U.S. macroeconomic indicators over a pre-release window closing at each official release. Nowcast quality is assessed through a LiveMacro Score against announcement-window equity returns and a LiveBetting Score from simulated Polymarket-style trading, with Federal Reserve regional-bank nowcasts, the Bloomberg ECOS professional consensus, and an auto-ARIMA baseline as comparators. Over six months with four state-of-the-art LLM agents configured with web search, aggregate nowcast accuracy is broadly comparable to the institutional and professional benchmarks, with performance varying widely across individual indicators. This highlights LLM agents' potential as real-time estimators of macroeconomic conditions.}
+}
+
+@inproceedings{galarnyk2026ipominetoolkitdatasetsection,
+      title={IPO-Mine: A Toolkit and Dataset for Section-Structured Analysis of Long, Multimodal IPO Documents},
+      author={Michael Galarnyk and Siddharth Lohani and Vidhyakshaya Kannan and Sagnik Nandi and Aman Patel and Liqin Ye and Arnav Hiray and Rutwik Routu and Prasun Banerjee and Siddhartha Somani and Sudheer Chava},
+      year={2026},
+      arxiv={2605.28714},
+      url={https://arxiv.org/abs/2605.28714},
+      booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+      abbr={KDD},
+      code={https://github.com/gtfintechlab/IPO-Mine/},
+      huggingface={https://huggingface.co/collections/gtfintechlab/ipo-mine},
+      website={https://www.ipomine-demo.siddharthlohani.dev/},
+      selected={true},
+      abstract={An Initial Public Offering (IPO) filing is a document released when a private firm goes public, allowing individual (retail) investors to purchase its shares. These filings describe a firm's business, financials, and risks and are long, multimodal documents with narrative text and images. Despite their importance to financial markets, there is no large-scale, standardized dataset or benchmark for studying IPO filings with modern language and multimodal models. These documents pose significant challenges: filings frequently exceed 500,000 tokens and lack consistent structural organization. We introduce the IPO-Toolkit, an open-source framework for downloading and parsing IPO filings into standardized section-structured text and extracted images. The toolkit segments filings, extracts embedded images, and produces structured outputs that enable large-scale, reproducible analysis workflows over long, multimodal documents. Using this infrastructure, we construct the IPO-Dataset, a large, section-structured, multimodal dataset covering more than 109,000 IPO filings and amendments from 1994 to 2026 and containing over 76,000 images. We establish structured evaluation tasks over extracted financial charts, including chart quality and misleadingness assessment. Our experiments show that state-of-the-art multimodal models often diverge from expert human judgments on these tasks, exposing alignment challenges in multimodal reasoning over long, real-world regulatory documents. Beyond benchmarking, the IPO-Dataset enables large-scale analysis of section-level textual variation and cross-industry differences in visual and textual disclosure practices. Our code, dataset, and website are publicly available under CC-BY-4.0.}
+}
+
 @inproceedings{ye2026evolutionarytaskdiscoveryadvancing,
       title={Evolutionary Task Discovery: Advancing Reasoning Frontiers via Skill Composition and Complexity Scaling}, 
       author={Liqin Ye and Yanbin Yin and Michael Galarnyk and Yuzhao Heng and Sudheer Chava and Chao Zhang},
@@ -42,36 +71,6 @@
       abstract={The traditional process of creating labeled datasets is labor-intensive and expensive. Recent breakthroughs in open-source large language models (LLMs) have opened up a new avenue in generating labeled datasets automatically for various natural language processing (NLP) tasks, providing an alternative to such an expensive annotation process. However, the reliability of such auto-generated labels remains a significant concern due to inherent inaccuracies. When learning from noisy labels, the model's generalization is likely to be harmed as it is prone to overfit to those label noises. While previous studies in learning from noisy labels mainly focus on synthetic noise and real-world noise, LLM-generated label noise receives less attention. In this paper, we propose SiDyP: Simplex Label Diffusion with Dynamic Prior to calibrate the classifier's prediction, thus enhancing its robustness towards LLM-generated noisy labels. SiDyP retrieves potential true label candidates by neighborhood label distribution in text embedding space and iteratively refines noisy candidates using a simplex diffusion model. Our framework can increase the performance of the BERT classifier fine-tuned on both zero-shot and few-shot LLM-generated noisy label datasets by an average of 7.21\% and 7.30\% respectively. We demonstrate the effectiveness of SiDyP by conducting extensive benchmarking for different LLMs over a variety of NLP tasks.}
 }
 
-@inproceedings{shah2025reportedcutofflargelanguage,
-      title={Beyond the Reported Cutoff: Where Large Language Models Fall Short on Financial Knowledge}, 
-      author={Agam Shah and Liqin Ye and Sebastian Jaskowski and Wei Xu and Sudheer Chava},
-      year={2025},
-      arxiv={2504.00042},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2504.00042}, 
-      booktitle={2nd Conference on Language Modeling},
-      abbr={COLM},
-      code={https://github.com/gtfintechlab/knowledge-gap},
-      selected={true},
-      abstract={Large Language Models (LLMs) are frequently utilized as sources of knowledge for question-answering. While it is known that LLMs may lack access to real-time data or newer data produced after the model's cutoff date, it is less clear how their knowledge spans across historical information. In this study, we assess the breadth of LLMs' knowledge using financial data of U.S. publicly traded companies by evaluating more than 197k questions and comparing model responses to factual data. We further explore the impact of company characteristics, such as size, retail investment, institutional attention, and readability of financial filings, on the accuracy of knowledge represented in LLMs. Our results reveal that LLMs are less informed about past financial performance, but they display a stronger awareness of larger companies and more recent information. Interestingly, at the same time, our analysis also reveals that LLMs are more likely to hallucinate for larger companies, especially for data from more recent years. We will make the code, prompts, and model outputs public upon the publication of the work.}
-}
-
-@inproceedings{galarnyk2026ipominetoolkitdatasetsection,
-      title={IPO-Mine: A Toolkit and Dataset for Section-Structured Analysis of Long, Multimodal IPO Documents},
-      author={Michael Galarnyk and Siddharth Lohani and Vidhyakshaya Kannan and Sagnik Nandi and Aman Patel and Liqin Ye and Arnav Hiray and Rutwik Routu and Prasun Banerjee and Siddhartha Somani and Sudheer Chava},
-      year={2026},
-      arxiv={2605.28714},
-      url={https://arxiv.org/abs/2605.28714},
-      booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
-      abbr={KDD},
-      code={https://github.com/gtfintechlab/IPO-Mine/},
-      huggingface={https://huggingface.co/collections/gtfintechlab/ipo-mine},
-      website={https://www.ipomine-demo.siddharthlohani.dev/},
-      selected={true},
-      abstract={An Initial Public Offering (IPO) filing is a document released when a private firm goes public, allowing individual (retail) investors to purchase its shares. These filings describe a firm's business, financials, and risks and are long, multimodal documents with narrative text and images. Despite their importance to financial markets, there is no large-scale, standardized dataset or benchmark for studying IPO filings with modern language and multimodal models. These documents pose significant challenges: filings frequently exceed 500,000 tokens and lack consistent structural organization. We introduce the IPO-Toolkit, an open-source framework for downloading and parsing IPO filings into standardized section-structured text and extracted images. The toolkit segments filings, extracts embedded images, and produces structured outputs that enable large-scale, reproducible analysis workflows over long, multimodal documents. Using this infrastructure, we construct the IPO-Dataset, a large, section-structured, multimodal dataset covering more than 109,000 IPO filings and amendments from 1994 to 2026 and containing over 76,000 images. We establish structured evaluation tasks over extracted financial charts, including chart quality and misleadingness assessment. Our experiments show that state-of-the-art multimodal models often diverge from expert human judgments on these tasks, exposing alignment challenges in multimodal reasoning over long, real-world regulatory documents. Beyond benchmarking, the IPO-Dataset enables large-scale analysis of section-level textual variation and cross-industry differences in visual and textual disclosure practices. Our code, dataset, and website are publicly available under CC-BY-4.0.}
-}
-
 @inproceedings{shah2025wordsuniteworldunified,
       title={Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally}, 
       author={Agam Shah and Siddhant Sukhani and Huzaifa Pardawala and Saketh Budideti and Riya Bhadani and Rudra Gopal and Siddhartha Somani and Michael Galarnyk and Soungmin Lee and Arnav Hiray and Akshar Ravichandran and Eric Kim and Pranav Aluru and Joshua Zhang and Sebastian Jaskowski and Veer Guda and Meghaj Tarte and Liqin Ye and Spencer Gosden and Rutwik Routu and Rachel Yuh and Sloka Chava and Sahasra Chava and Dylan Patrick Kelly and Aiden Chiang and Harsit Mittal and Sudheer Chava},
@@ -86,4 +85,19 @@
       website={https://gcb-web-bb21b.web.app/},
       selected={true},
       abstract={Central banks around the world play a crucial role in maintaining economic stability. Deciphering policy implications in their communications is essential, especially as misinterpretations can disproportionately impact vulnerable populations. To address this, we introduce the World Central Banks (WCB) dataset, the most comprehensive monetary policy corpus to date, comprising over 380k sentences from 25 central banks across diverse geographic regions, spanning 28 years of historical data. After uniformly sampling 1k sentences per bank (25k total) across all available years, we annotate and review each sentence using dual annotators, disagreement resolutions, and secondary expert reviews. We define three tasks: Stance Detection, Temporal Classification, and Uncertainty Estimation, with each sentence annotated for all three. We benchmark seven Pretrained Language Models (PLMs) and nine Large Language Models (LLMs) (Zero-Shot, Few-Shot, and with annotation guide) on these tasks, running 15,075 benchmarking experiments. We find that a model trained on aggregated data across banks significantly surpasses a model trained on an individual bank's data, confirming the principle "the whole is greater than the sum of its parts." Additionally, rigorous human evaluations, error analyses, and predictive tasks validate our framework's economic utility.}
+}
+
+@inproceedings{shah2025reportedcutofflargelanguage,
+      title={Beyond the Reported Cutoff: Where Large Language Models Fall Short on Financial Knowledge}, 
+      author={Agam Shah and Liqin Ye and Sebastian Jaskowski and Wei Xu and Sudheer Chava},
+      year={2025},
+      arxiv={2504.00042},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2504.00042}, 
+      booktitle={2nd Conference on Language Modeling},
+      abbr={COLM},
+      code={https://github.com/gtfintechlab/knowledge-gap},
+      selected={true},
+      abstract={Large Language Models (LLMs) are frequently utilized as sources of knowledge for question-answering. While it is known that LLMs may lack access to real-time data or newer data produced after the model's cutoff date, it is less clear how their knowledge spans across historical information. In this study, we assess the breadth of LLMs' knowledge using financial data of U.S. publicly traded companies by evaluating more than 197k questions and comparing model responses to factual data. We further explore the impact of company characteristics, such as size, retail investment, institutional attention, and readability of financial filings, on the accuracy of knowledge represented in LLMs. Our results reveal that LLMs are less informed about past financial performance, but they display a stronger awareness of larger companies and more recent information. Interestingly, at the same time, our analysis also reveals that LLMs are more likely to hallucinate for larger companies, especially for data from more recent years. We will make the code, prompts, and model outputs public upon the publication of the work.}
 }

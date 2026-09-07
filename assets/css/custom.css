@@ -142,7 +142,7 @@ html[data-theme="dark"] {
 }
 
 /* Style website icon */
-.links .website-btn {
+.links a.website-btn {
   background-color: #509bf1 !important;
   color: white !important;
   border-radius: 4px !important;
@@ -152,13 +152,13 @@ html[data-theme="dark"] {
   font-weight: 500 !important;
 }
 
-.links .website-btn i {
+.links a.website-btn i {
   font-size: 1.5em !important;  
   vertical-align: middle !important;
   line-height: 1 !important;
 }
 
-.links .website-btn:hover {
+.links a.website-btn:hover {
   background-color: #357abd !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
