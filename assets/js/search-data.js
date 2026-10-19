@@ -21,7 +21,7 @@ ninja.data = [{
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/https:/liqinye.github.io/assets/pdf/liqin_resume.pdf";
+            window.location.href = "/cv/";
           },
         },{id: "nav-misc",
           title: "Misc",
