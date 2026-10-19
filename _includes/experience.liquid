@@ -1,0 +1,30 @@
+<div class="experience">
+  {% for entry in site.data.experience %}
+    <div class="experience-item">
+      <div class="experience-text">
+        <h3 class="experience-company">{{ entry.team | escape }}, {{ entry.company | escape }}</h3>
+        <div class="experience-role-row">
+          <p class="experience-role">{{ entry.role | escape }}</p>
+          <p class="experience-period">
+            <span class="experience-separator" aria-hidden="true">&middot;</span>
+            {{ entry.period | escape }}
+          </p>
+        </div>
+        <p class="experience-meta">{{ entry.location | escape }}</p>
+        <p class="experience-supervisors">
+          <span>Mentor: {{ entry.mentor | escape }}</span>
+          <span>Manager: {{ entry.manager | escape }}</span>
+        </p>
+        <p class="experience-topic">Topic: {{ entry.topic | escape }}</p>
+      </div>
+      <img
+        src="{{ entry.logo | relative_url }}"
+        alt="{{ entry.company | escape }} logo"
+        class="experience-logo"
+        width="603"
+        height="182"
+        loading="lazy"
+      >
+    </div>
+  {% endfor %}
+</div>

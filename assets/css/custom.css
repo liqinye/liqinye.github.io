@@ -209,6 +209,114 @@ a {
   font-family: 'Nunito', sans-serif !important;
 }
 
+/* Experience section styling */
+.experience-section {
+  margin-top: 1.5rem;
+}
+
+.experience {
+  margin-top: 1rem;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 100px;
+}
+
+.experience-item + .experience-item {
+  margin-top: 1.5rem;
+}
+
+.experience-company {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.experience-item p {
+  margin-bottom: 0.35rem;
+}
+
+.experience-item p:last-child {
+  margin-bottom: 0;
+}
+
+.experience-role-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.65rem;
+  margin-bottom: 0.35rem;
+}
+
+.experience-role-row p {
+  margin-bottom: 0;
+}
+
+.experience-role {
+  font-style: italic;
+}
+
+.experience-period {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.9em;
+  color: var(--global-text-color);
+  opacity: 0.6;
+}
+
+.experience-meta,
+.experience-supervisors {
+  font-size: 0.95em;
+}
+
+.experience-supervisors {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+}
+
+.experience-logo {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .experience-item {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .experience-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .experience-logo {
+    grid-row: 1;
+    width: 120px;
+  }
+}
+
+@media (max-width: 380px) {
+  .experience-role-row {
+    flex-direction: column;
+  }
+
+  .experience-separator {
+    display: none;
+  }
+}
+
 /* Education section styling */
 .education {
   margin-bottom: 2rem;

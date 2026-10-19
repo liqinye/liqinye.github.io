@@ -67,6 +67,14 @@ layout: default
       </div>
     {% endif %}
 
+    <!-- Experience -->
+    {% if page.experience and page.experience.enabled %}
+      <section id="experience" class="experience-section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+        {% include experience.liquid %}
+      </section>
+    {% endif %}
+
     <!-- Education -->
     {% if page.education and page.education.enabled %}
       <div style="margin-top: 1.5rem;">

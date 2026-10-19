@@ -654,7 +654,7 @@ navigation:
     url: /publications/
     nav_order: 1
   - title: CV
-    url: https://liqinye.github.io/assets/pdf/liqin_cv.pdf
+    url: /assets/pdf/liqin-cv.pdf
     nav_order: 2
   - title: Misc
     url: /misc/
