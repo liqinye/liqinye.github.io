@@ -11,7 +11,7 @@ a few Liquid includes, and YAML data files that hold all the content.
 | Bio paragraphs | `_includes/bio.md` (Markdown) |
 | Name, email, website host (for the CV page/PDF), CV path, social links | `_config.yml` → `profile:` and `social:` |
 | Publications (featured cards on the home page; the full list on `/publications/`) | `_data/publications.yml` |
-| News | `_data/news.yml` (newest first; each item opens with a decorative glyph hidden from screen readers — `icon:` (an inline SVG in `_includes/news-icons/`, a project's own mark; see "News marks") when set, else `emoji:`; `text` is written in the active voice, Markdown links allowed, and should fit two lines at the 38rem measure, ≈ 170 characters) |
+| News (the home-page section lists every item; there is no separate page) | `_data/news.yml` (newest first; each item opens with a decorative glyph hidden from screen readers — `icon:` (an inline SVG in `_includes/news-icons/`, a project's own mark; see "News marks") when set, else `emoji:`; `text` is written in the active voice, Markdown links allowed, and should fit two lines at the 38rem measure, ≈ 170 characters) |
 | Experience / Education (each row starts with the organisation's logo in its own colours) / Teaching / Service / Honors | `_data/*.yml` — logos: see "Organisation logos" |
 | Misc page (the photo collections: equal square tiles, three per place; the lede is the owner's text from the old site, verbatim, set full-width like the headings) | `misc.html` (title, lede), `_data/photos.yml` (`title` as "City, ST", `date` on the right, photos with optional `pos`) + images in `assets/img/photos/` |
 | Temporary notice between the bio and the icon row ("I am looking for a research internship for Summer 2027. Feel free to reach out!"): a centred row of the hero grid (`notice` area, kept short enough for one line in the text column), highlighter-style, `text-wrap: balance` when a narrow viewport forces a wrap; the wording follows the usual PhD-homepage pattern (research notes: `~/Desktop/liqinye-icon-candidates/final/notice/CONVENTIONS.md`) | `_config.yml` → `profile.notice` (a list of lines or one string, Markdown allowed; delete the key to remove), `index.html` `.notice` |
@@ -114,7 +114,7 @@ seal _figures/logos/gt-logo.png gt.png;  seal _figures/logos/uci-logo.png uci.pn
 ### News marks
 
 Two news items open with the project's own mark instead of an emoji (`icon:` in `_data/news.yml` names a file in `_includes/news-icons/`,
-which `_includes/news-list.html` and `news.html` inline as `<svg class="news__icon" aria-hidden="true">`): `forecast-dojo.svg` is the
+which `_includes/news-list.html` inlines as `<svg class="news__icon" aria-hidden="true">`): `forecast-dojo.svg` is the
 Forecast-Dojo site's favicon as is (the orange swirl, 64 × 64 viewBox) and `alphabet.svg` is the AlphaBet site's favicon mark
 (the α with the `#9D593F` star, redrawn from its data-URL favicon without the paper tile, viewBox re-centred on the mark). The marks
 are inlined rather than linked as images so the α can be stroked in `currentColor`: it follows the text ink in both themes, and the swirl
@@ -198,7 +198,8 @@ To replace the current site with this one:
 
 Old URLs keep working: `/publications/` is a real page again, `/#research` still lands on "Selected Publications",
 `/photography/` → `/misc/` (the page is now called Misc; `redirects/photography.html`), and the old al-folio paths that Google may still hold —
-`/blog/` → `/`, `/projects/` → `/publications/`, `/books/` → `/misc/` (`redirects/*.html`, all `noindex` with a canonical to the target); `/cv/` embeds `assets/pdf/liqin-cv.pdf`,
+`/blog/` → `/`, `/projects/` → `/publications/`, `/books/` → `/misc/`, and `/news/` → `/#news` since the separate News page was dropped on
+2026-11-01 — the home section now lists every item (`redirects/*.html`, all `noindex` with a canonical to the target); `/cv/` embeds `assets/pdf/liqin-cv.pdf`,
 which the viewer's toolbar also opens in a new tab and downloads.
 
 ## Things to confirm
@@ -257,7 +258,7 @@ If the page size ever changes from A4, also update the `width`/`height` of `.cv-
   `#0A7A75`; dark `#3CC6C0` / `#5FD3CE` with a muted `#2B8683` underline — one vermilion seal `#AE3A30`; warm charcoal dark mode
   (`prefers-color-scheme` + toggle). All text pairs meet WCAG AA except the Tiffany body links (3.7:1 by the owner's choice; 13 px meta links are 4.5:1); paper titles and nav labels stay ink and turn Tiffany only on hover — a deliberate exception to "all links Tiffany" so headings read as headings.   choice; body text exceeds 7:1.
 - Type: Newsreader (headings + body, optical sizes), Inter (dates, labels, links), Lusitana 400 for the name and the small `Liqin Ye` header link on subpages; Forum 400 for the hidden motto only.
-- Header (≈ 64 px, pinned to the top while scrolling — `position: sticky`, solid paper, `[id]` anchors carry a matching `scroll-margin-top`): a small `Liqin Ye` (Lusitana 18 px, ink; absent on the home page) left, nav (About · Publications · News · CV · Misc — the current page carries
+- Header (≈ 64 px, pinned to the top while scrolling — `position: sticky`, solid paper, `[id]` anchors carry a matching `scroll-margin-top`): a small `Liqin Ye` (Lusitana 18 px, ink; absent on the home page) left, nav (About · Publications · CV · Misc — the current page carries
   a Tiffany bar) and theme toggle right, on one row down to 560 px; below that the nav drops to its
   own row (five labels on one line down to ~350 px).
 - Layout: 17 px root on desktop (16 px on phones), so every rem size runs 6 % above browser default; 60 rem shell, 38 rem prose measure, 8 px rhythm, hairline rules, no boxes or badges; sections 3.25 rem apart (2.5 rem on phones), News 2.75 rem under
