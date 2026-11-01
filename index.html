@@ -1,0 +1,133 @@
+---
+layout: default
+title: Liqin Ye
+description: Liqin Ye is a Machine Learning PhD candidate at Georgia Tech working on LLM agents, LLM forecasting, and LLMs in finance.
+---
+{%- assign p = site.profile -%}
+{%- capture arrow -%}<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>{%- endcapture -%}
+<section class="hero" id="about" aria-labelledby="name">
+  <div class="hero__text">
+    <h1 class="hero__name" id="name"><span>{{ p.name }}</span>{% include seal.html %}{% if p.name_zh %}<span class="hero__name-zh" lang="zh-Hans">{{ p.name_zh }}</span>{% endif %}</h1>
+    <div class="hero__bio">{% capture bio %}{% include bio.md %}{% endcapture %}{{ bio | markdownify }}</div>
+  </div>
+  <div class="portrait">
+    <picture>
+      <source srcset="{{ p.portrait_webp | relative_url }}" type="image/webp">
+      <img src="{{ p.portrait | relative_url }}" width="593" height="640" alt="Portrait of {{ p.name }} in front of snow-covered mountains at dusk" fetchpriority="high">
+    </picture>
+    {%- if p.motto %}
+    <p class="motto"><span class="motto__text">{{ p.motto }}</span> {% include icons/fingers-crossed.svg %}</p>
+    {%- endif %}
+  </div>
+  {%- if p.notice and p.notice != "" %}
+  {%- assign notice_lines = p.notice -%}{%- if p.notice.first == nil %}{%- assign notice_lines = p.notice | split: "\n" -%}{%- endif %}
+  <p class="notice">{% for line in notice_lines %}{% if forloop.index > 1 %}<br>{% endif %}<span class="notice__text">{{ line | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>{% endfor %}</p>
+  {%- endif %}
+  <ul class="social" role="list" aria-label="Profiles">
+    <li><a href="{{ site.social.scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">{% include icons/scholar.svg %}</a></li>
+    <li><a href="{{ site.social.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">{% include icons/github.svg %}</a></li>
+    <li><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">{% include icons/linkedin.svg %}</a></li>
+    <li><a href="{{ site.social.x }}" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)">{% include icons/x.svg %}</a></li>
+  </ul>
+</section>
+
+<section class="section" id="news" aria-labelledby="news-h">
+  <div class="section__head">
+    <h2 id="news-h">News</h2>
+    <a class="more meta" href="{{ '/news/' | relative_url }}">All news{{ arrow }}</a>
+  </div>
+  {% include news-list.html limit=5 %}
+</section>
+
+<section class="section" id="publications" aria-labelledby="pubs-h">
+  {%- comment -%} id="research" on the head keeps old /#research links landing here {%- endcomment -%}
+  <div class="section__head" id="research">
+    <h2 id="pubs-h">Selected Publications</h2>
+    <a class="more meta" href="{{ '/publications/' | relative_url }}">All publications{{ arrow }}</a>
+  </div>
+  <div class="projects">
+    {%- assign featured = site.data.publications | where: "featured", true | sort: "date" | reverse -%}
+    {%- for pub in featured -%}{% include project-card.html pub=pub %}{%- endfor -%}
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="exp-h">
+  <div class="section__head"><h2 id="exp-h">Experience</h2></div>
+  <ul class="ledger ledger--org" role="list">
+    {%- for e in site.data.experience %}
+    <li class="org">
+      {% include logo.html logo=e.logo wide=e.wide size=e.logo_size %}
+      <div class="org__body">
+        <div class="org__line"><h3 class="row__title">{{ e.role }}, {{ e.company }}</h3><span class="org__when meta">{{ e.period }}</span></div>
+        <div class="org__line"><p class="row__detail">{{ e.org }}, <span class="nowrap">{{ e.team }}</span></p><span class="org__when meta">{{ e.location }}</span></div>
+        <p class="row__note meta"><span class="nowrap">Mentor: {{ e.mentor }}</span><span class="sep">·</span><span class="nowrap">Manager: {{ e.manager }}</span></p>
+        <p class="row__note meta">Topic: {{ e.topic }}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section" id="education" aria-labelledby="edu-h">
+  <div class="section__head"><h2 id="edu-h">Education</h2></div>
+  <ul class="ledger ledger--org" role="list">
+    {%- for ed in site.data.education %}
+    <li class="org">
+      {% include logo.html logo=ed.logo %}
+      <div class="org__body">
+        <div class="org__line"><h3 class="row__title">{{ ed.institution }}</h3><span class="org__when meta">{{ ed.location }}</span></div>
+        <ul class="degrees" role="list">
+          {%- for d in ed.degrees %}
+          <li class="org__line"><span class="row__detail">{{ d.degree }}</span><span class="org__when meta">{{ d.period }}</span></li>
+          {%- endfor %}
+        </ul>
+        {%- if ed.note %}<p class="row__note meta">{{ ed.note }}</p>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<div class="cols">
+  <section class="section" id="teaching" aria-labelledby="teach-h">
+    <div class="section__head"><h2 id="teach-h">Teaching</h2></div>
+    <ul class="ledger" role="list">
+      {%- for t in site.data.teaching %}
+      <li class="row">
+        <div class="row__key">{{ t.term }}</div>
+        <div>
+          <h3 class="row__title">{{ t.course }}</h3>
+          <p class="row__note meta">{{ t.role }}<span class="sep">·</span>{{ t.institution }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  <div class="cols__stack">
+    <section class="section" id="honors" aria-labelledby="hon-h">
+      <div class="section__head"><h2 id="hon-h">Honors</h2></div>
+      <ul class="ledger" role="list">
+        {%- for h in site.data.honors %}
+        <li class="row">
+          <div class="row__key">{{ h.year }}</div>
+          <div>
+            <h3 class="row__title">{{ h.title }}</h3>
+            <p class="row__note meta">{{ h.by }}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+    <section class="section" id="service" aria-labelledby="svc-h">
+      <div class="section__head"><h2 id="svc-h">Service</h2></div>
+      <ul class="ledger" role="list">
+        {%- for s in site.data.service %}
+        <li class="row">
+          <div class="row__key">{{ s.role }}</div>
+          <div><p class="row__detail row__detail--flush">{% for it in s.items %}{% if it.size <= 24 %}<span class="nowrap">{{ it }}</span>{% else %}{{ it }}{% endif %}{% unless forloop.last %} <span class="sep">·</span> {% endunless %}{% endfor %}</p></div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+  </div>
+</div>

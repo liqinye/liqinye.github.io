@@ -1,0 +1,15 @@
+{%- comment -%} Link row for a publication: small icon-only buttons (class .chip + one modifier per link type, coloured by the
+--chip-*-bg/-fg tokens in site.css). The label is the tooltip (title) and the accessible name (aria-label, suffixed with the paper's
+short name so repeated labels stay distinct across cards). Params: links (hash), short. Icons: _includes/icons/links/ — outline
+glyphs in currentColor, except Hugging Face, which is the official full-colour logo (assets/img/hf-logo.svg, loaded once as an <img> so it is cached rather than inlined per chip) on a neutral tint. {%- endcomment -%}
+{%- assign l = include.links -%}
+{%- capture sfx -%}{% if include.short %}: {{ include.short }}{% endif %}{%- endcapture -%}
+{%- if l.arxiv %}<a class="chip chip--arxiv" href="{{ l.arxiv }}" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv{{ sfx }}">{% include icons/links/arxiv.svg %}</a>{% endif -%}
+{%- if l.abstract %}<a class="chip chip--abstract" href="{{ l.abstract }}" target="_blank" rel="noopener" title="Abstract" aria-label="Abstract{{ sfx }}">{% include icons/links/abstract.svg %}</a>{% endif -%}
+{%- if l.pdf %}<a class="chip chip--pdf" href="{{ l.pdf }}" target="_blank" rel="noopener" title="PDF" aria-label="PDF{{ sfx }}">{% include icons/links/pdf.svg %}</a>{% endif -%}
+{%- if l.code %}<a class="chip chip--code" href="{{ l.code }}" target="_blank" rel="noopener" title="Code" aria-label="Code{{ sfx }}">{% include icons/links/code.svg %}</a>{% endif -%}
+{%- if l.website %}<a class="chip chip--website" href="{{ l.website }}" target="_blank" rel="noopener" title="Project page" aria-label="Project page{{ sfx }}">{% include icons/links/website.svg %}</a>{% endif -%}
+{%- if l.data %}<a class="chip chip--data" href="{{ l.data }}" target="_blank" rel="noopener" title="Hugging Face" aria-label="Hugging Face{{ sfx }}"><img class="icon icon--hf" src="{{ '/assets/img/hf-logo.svg' | relative_url }}" alt="" width="20" height="19" aria-hidden="true" loading="lazy" decoding="async"></a>{% endif -%}
+{%- comment -%} TODO: dedicated icons for Slides and Video; until then they borrow pdf.svg / website.svg and the PDF / Project page tints. {%- endcomment -%}
+{%- if l.slides %}<a class="chip chip--pdf" href="{{ l.slides }}" target="_blank" rel="noopener" title="Slides" aria-label="Slides{{ sfx }}">{% include icons/links/pdf.svg %}</a>{% endif -%}
+{%- if l.video %}<a class="chip chip--website" href="{{ l.video }}" target="_blank" rel="noopener" title="Video" aria-label="Video{{ sfx }}">{% include icons/links/website.svg %}</a>{% endif -%}

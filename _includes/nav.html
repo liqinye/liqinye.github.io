@@ -1,0 +1,22 @@
+{%- assign here = page.url -%}
+<header class="site-header{% if here == "/" %} site-header--home{% endif %}">
+  <div class="shell">
+    {%- comment -%} Brand: nothing on the home page (the hero already carries the name and the seal; the owner dropped the 小篆 葉利欽 mark on
+    2026-10-31 because it repeated the seal), a small Lusitana "Liqin Ye" home link on every other page. The retired Chinese marks stay in
+    _includes/brand-mark-xiaozhuan.svg, brand-mark-jinwen.svg and brand-mark.svg for reference. {%- endcomment -%}
+    {%- if here != "/" %}
+    <a class="brand" href="{{ '/' | relative_url }}" title="Liqin Ye · Home">{{ site.profile.name }}</a>
+    {%- endif %}
+    <nav class="site-nav" aria-label="Site">
+      <a href="{{ '/' | relative_url }}{% if here == "/" %}#about{% endif %}"{% if here == "/" %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/publications/' | relative_url }}"{% if here == "/publications/" %} aria-current="page"{% endif %}>Publications</a>
+      <a href="{{ '/news/' | relative_url }}"{% if here == "/news/" %} aria-current="page"{% endif %}>News</a>
+      <a href="{{ '/cv/' | relative_url }}"{% if here == "/cv/" %} aria-current="page"{% endif %}>CV</a>
+      <a href="{{ '/misc/' | relative_url }}"{% if here == "/misc/" %} aria-current="page"{% endif %}>Misc</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+</header>

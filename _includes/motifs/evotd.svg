@@ -1,0 +1,16 @@
+<svg viewBox="0 0 330 220" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <g class="m-ink">
+    <path d="M62 62 C 100 62, 120 86, 160 86"/>
+    <path d="M62 110 C 100 110, 120 86, 160 86"/>
+    <path d="M62 110 C 100 110, 120 142, 160 142"/>
+    <path d="M62 158 C 100 158, 120 142, 160 142"/>
+    <path d="M160 86 C 190 86, 200 100, 228 100"/>
+    <path d="M228 100 C 250 100, 258 100, 282 100"/>
+    <path d="M160 142 C 190 142, 200 150, 228 150"/>
+  </g>
+  <g class="m-ink-fill"><circle cx="62" cy="62" r="4.5"/><circle cx="62" cy="110" r="4.5"/><circle cx="62" cy="158" r="4.5"/><circle cx="160" cy="142" r="5"/><circle cx="228" cy="150" r="6"/></g>
+  <circle class="m-accent-fill" cx="160" cy="86" r="5.5"/>
+  <circle class="m-accent-fill" cx="228" cy="100" r="7.5"/>
+  <circle class="m-accent-fill" cx="282" cy="100" r="10"/>
+  <circle class="m-faint m-dash" cx="282" cy="100" r="17"/>
+</svg>

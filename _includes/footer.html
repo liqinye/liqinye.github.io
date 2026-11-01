@@ -1,0 +1,58 @@
+<footer class="site-footer">
+  <div class="shell meta">
+    <p>© {{ site.time | date: "%Y" }} {{ site.profile.name }} · Atlanta, GA</p>
+    <p>Set in Lusitana, Newsreader and Inter · <span class="nowrap">Updated {{ site.time | date: "%B %Y" }}</span></p>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  function current() {
+    var t = root.getAttribute('data-theme');
+    return t ? t : (mq.matches ? 'dark' : 'light');
+  }
+  function sync() {
+    var d = current() === 'dark';
+    btn.setAttribute('aria-pressed', String(d));
+    var m = document.querySelector('meta[name=theme-color]');
+    if (m) m.content = d ? '#161513' : '#FAF8F2';
+  }
+  btn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
+  });
+  if (mq.addEventListener) mq.addEventListener('change', sync);
+  sync();
+})();
+</script>
+<script>
+(function () {   /* the hidden motto: reveal its glyph while the text selection touches the paragraph */
+  var m = document.querySelector('.motto'); if (!m || !window.getSelection) return;
+  document.addEventListener('selectionchange', function () {
+    var s = window.getSelection();
+    m.classList.toggle('is-selected', !!(s && s.rangeCount && !s.isCollapsed && s.containsNode(m, true)));
+  });
+})();
+</script>
+<script>
+(function () {   /* every link that leaves the site opens in a new tab (templates set this on their own anchors; this covers links written in Markdown: bio, news) */
+  var host = location.host;
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    if (a.host === host) return;
+    a.target = '_blank';
+    if (!/\bnoopener\b/.test(a.rel)) a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener';
+  });
+})();
+</script>
+<script>
+(function () {   /* elided author lists: "…" reveals everyone (one-way) */
+  document.querySelectorAll('.authors--elided').forEach(function (a) {
+    var s = a.querySelector('.authors__short'), f = a.querySelector('.authors__full'); if (!s || !f) return;
+    a.querySelectorAll('.authors__more').forEach(function (b) { b.addEventListener('click', function () { s.hidden = true; f.hidden = false; a.classList.add('is-expanded'); }); });
+  });
+})();
+</script>

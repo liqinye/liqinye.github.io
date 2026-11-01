@@ -1,0 +1,24 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+description: Publications by Liqin Ye on LLM agents, LLM forecasting, and LLMs in finance.
+---
+{%- capture arrow -%}<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>{%- endcapture -%}
+<header class="page-head page-head--row">
+  <h1>Publications</h1>
+  <a class="more meta" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar{{ arrow }}</a>
+</header>
+{%- assign pubs = site.data.publications | sort: "date" | reverse -%}
+{%- assign prev = "" -%}
+{%- for pub in pubs -%}
+  {%- assign y = pub.year | append: "" -%}
+  {%- if y != prev -%}
+    {%- if prev != "" %}</ul>{% endif %}
+  <h2 class="year">{{ y }}</h2>
+  <ul class="publist" role="list">
+  {%- endif %}
+    {% include pub-row.html pub=pub %}
+  {%- assign prev = y -%}
+{%- endfor %}
+</ul>

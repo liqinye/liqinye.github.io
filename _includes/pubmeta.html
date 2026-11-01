@@ -1,0 +1,9 @@
+{%- comment -%} Venue line. Published: "KDD 2025 · Research Track"; anything else (preprint / under review): "Preprint · 2026";
+then an optional note. Authorship is not labelled here — equal contribution is marked by the asterisks in authors.html. Param: pub. {%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- if pub.status == "published" -%}
+<span class="venue">{{ pub.venue }} {{ pub.year }}</span>{% if pub.track %}<span class="sep">·</span>{{ pub.track }}{% endif %}
+{%- else -%}
+<span class="venue">Preprint</span><span class="sep">·</span>{{ pub.year }}
+{%- endif -%}
+{%- if pub.note %}<span class="sep">·</span>{{ pub.note }}{% endif -%}

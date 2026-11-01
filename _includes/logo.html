@@ -1,0 +1,12 @@
+{%- comment -%} Organisation mark in the left column of an Experience / Education row, in the organisation's own colours.
+`logo` is either a file stem or a full file name in assets/img/logos/. Stems: seals load STEM.png — the original logo trimmed to the
+seal's outer edge, padded square and downsized to 192×192 (recipe in the README → "Organisation logos"), so GT and UCI render at one
+diameter; wordmarks (wide: true) load STEM.svg. A name with an extension (e.g. amazon-logo.svg, the published file kept under its raw
+name) is used as is. Seals are shown at one size, 6rem discs centred on the row (site.css .org__logo), wordmarks (.org__logo--wide) as wide as
+the logo column, 7rem; in dark mode the black wordmark is inverted by --wordmark-filter and seals sit on a disc of --seal-plate. A
+wordmark's viewBox size comes in as `size` ("W H"); the intrinsic width/height keep the box stable before the CSS arrives. Decorative — the organisation is named in the row text — so the image is empty-alt and the wrapper
+is hidden from AT. Params: logo (stem or file name), wide, size. {%- endcomment -%}
+{%- assign base = '/assets/img/logos/' | append: include.logo -%}
+{%- if include.logo contains '.' -%}{%- assign file = base -%}{%- elsif include.wide -%}{%- assign file = base | append: '.svg' -%}{%- else -%}{%- assign file = base | append: '.png' -%}{%- endif -%}
+{%- if include.wide -%}{%- assign dims = include.size | default: '192 192' | split: ' ' -%}{%- else -%}{%- assign dims = '192 192' | split: ' ' -%}{%- endif -%}
+<span class="org__logo{% if include.wide %} org__logo--wide{% endif %}" aria-hidden="true"><img src="{{ file | relative_url }}" width="{{ dims[0] }}" height="{{ dims[1] }}" alt="" loading="lazy" decoding="async"></span>

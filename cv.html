@@ -1,0 +1,48 @@
+---
+layout: default
+title: Curriculum Vitae
+permalink: /cv/
+description: Curriculum vitae of Liqin Ye, covering education, experience, research projects, publications, honors, skills and service.
+stylesheet: /assets/css/cv.css
+updated: 2026-10-18   # the PDF's date; the page head shows it as "Last updated October 2026"
+---
+{%- comment -%} /cv/ shows the owner's own CV — assets/pdf/liqin-cv.pdf, the compiled LaTeX document, served as is — embedded the way
+a Drive document embeds: the page head (title, "Last updated"), then the viewer frame. The frame opens with a slim document toolbar
+(.cv-viewer__bar: the file label left; "Open in new tab" and "Download", icon + label, right) over an <object type="application/pdf">
+(#view=FitH, no viewer toolbar) with an <iframe> of the same file nested as its fallback, both .cv-viewer__doc. On phones (≤680px),
+where inline PDF viewing is unreliable, the viewer gives way to a compact card: the first page as an image (assets/pdf/liqin-cv-p1.jpg,
+made with pdftoppm) beside the title, with "Open PDF" and "Download" side by side under them. To update the CV, replace the PDF and the
+first-page image and set `updated:` above — see README → CV. {%- endcomment -%}
+{%- assign p = site.profile -%}
+{%- assign updated = page.updated | date: "%B %Y" -%}
+{%- assign pdf = p.cv | relative_url -%}
+<header class="page-head cv-head">
+  <h1>Curriculum Vitae</h1>
+  <p class="meta cv-head__updated">Last updated {{ updated }}</p>
+</header>
+
+<div class="cv-viewer">
+  <div class="cv-viewer__bar">
+    <p class="cv-viewer__file"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8.5zM13.5 3.5v5h5M9 13h6M9 16.5h6"/></svg><span class="cv-viewer__file-name">{{ p.name }}<span class="sep">·</span>Curriculum Vitae</span></p>
+    <div class="cv-viewer__actions">
+      <a class="cv-viewer__action" href="{{ pdf }}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4.5h5.5V10M19.5 4.5 11 13M17.5 13.5V18a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V8A1.5 1.5 0 0 1 6 6.5h4.5"/></svg>Open in new tab</a>
+      <a class="cv-viewer__action" href="{{ pdf }}" download="Liqin-Ye-CV.pdf"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.6v11.2M7.6 10.6 12 15l4.4-4.4M4.6 19.6h14.8"/></svg>Download</a>
+    </div>
+  </div>
+  <object class="cv-viewer__doc" type="application/pdf" data="{{ pdf }}#view=FitH&amp;toolbar=0" aria-label="Curriculum vitae PDF">
+    <iframe class="cv-viewer__doc" src="{{ pdf }}#view=FitH&amp;toolbar=0" title="Curriculum vitae of {{ p.name }} (PDF)"></iframe>
+    <p class="cv-viewer__fallback meta">The PDF cannot be displayed here: <a href="{{ pdf }}" target="_blank" rel="noopener">open it in a new tab</a> or <a href="{{ pdf }}" download="Liqin-Ye-CV.pdf">download it</a>.</p>
+  </object>
+</div>
+
+<div class="cv-card">
+  <img class="cv-card__page" src="{{ '/assets/pdf/liqin-cv-p1.jpg' | relative_url }}" width="497" height="702" alt="First page of the CV" loading="lazy" decoding="async">
+  <div class="cv-card__body">
+    <p class="cv-card__title">{{ p.name }} · Curriculum Vitae</p>
+  </div>
+  <p class="cv-card__actions">
+    <a class="button" href="{{ pdf }}" target="_blank" rel="noopener">Open PDF</a>
+    <a class="button" href="{{ pdf }}" download="Liqin-Ye-CV.pdf">Download</a>
+  </p>
+</div>
+<p class="cv-viewer__print">Curriculum vitae of {{ p.name }}. The document is the PDF at https://{{ p.website | default: "liqinye.github.io" }}{{ p.cv }}</p>

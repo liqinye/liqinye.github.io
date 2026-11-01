@@ -1,0 +1,13 @@
+# logo: the mark in assets/img/logos/, shown in the organisation's own colours — a stem (STEM.png for seals, STEM.svg for wordmarks) or a file name used as is (README → "Organisation logos"); wide: true = a wordmark (the original SVG shown at the logo column's width, 7rem, inverted in dark mode) whose viewBox size is logo_size.
+- company: Amazon
+  org: Store Foundation AI
+  team: Rufus Post-training Team
+  role: Applied Scientist Intern
+  period: May 2026 – Present
+  location: Palo Alto, CA
+  mentor: Rongzhi Zhang
+  manager: Qingyu Yin
+  topic: Longitudinal agentic RL training for LLM forecasting agents
+  logo: amazon-logo.svg   # the published wordmark under its raw file name
+  wide: true
+  logo_size: 603 182

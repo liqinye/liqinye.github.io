@@ -1,0 +1,42 @@
+---
+layout: default
+title: Misc
+permalink: /misc/
+description: "Photographs by Liqin Ye, shot on a Fujifilm X-T5."
+---
+{%- assign ph = site.data.photos -%}
+<header class="page-head">
+  <h1>Misc</h1>
+  <p class="lede lede--full">In my spare time, I enjoy traveling, snowboarding, basketball, and photographing. Here you'll find a collection of photos that capture moments from my life and travels. All photos are taken by Fujifilm X-T5.</p>
+</header>
+{%- for c in ph.collections -%}
+<section class="photoset" aria-labelledby="set-{{ forloop.index }}">
+  <div class="photoset__head">
+    <h2 id="set-{{ forloop.index }}">{{ c.title }}</h2>
+    <p class="meta">{{ c.date }}</p>
+  </div>
+  <div class="photoset__row">
+    {%- for p in c.photos -%}
+      {%- assign r = p.w | times: 1.0 | divided_by: p.h -%}
+      {%- comment -%} square tiles, cover-cropped: a landscape frame is scaled to the tile height, so its rendered width is tile × r {%- endcomment -%}
+      {%- if r > 1 -%}{%- assign rmax = r | round: 3 -%}{%- else -%}{%- assign rmax = 1 -%}{%- endif -%}
+      {%- comment -%} derivative widths: files are resized on the long edge, so portrait images are narrower than the nominal size {%- endcomment -%}
+      {%- if p.w < p.h -%}
+        {%- assign w640 = p.w | times: 640 | divided_by: p.h -%}{%- assign w1200 = p.w | times: 1200 | divided_by: p.h -%}{%- assign w2000 = p.w | times: 2000 | divided_by: p.h -%}
+      {%- else -%}
+        {%- assign w640 = 640 -%}{%- assign w1200 = 1200 -%}{%- assign w2000 = 2000 -%}
+      {%- endif -%}
+      {%- assign base = '/assets/img/photos/' | append: p.file | relative_url -%}
+      {%- capture caption -%}{{ c.title }}{% if p.focal %} · {{ p.focal }} mm · f/{{ p.aperture }} · {{ p.shutter }} s{% endif %}{%- endcapture -%}
+      {%- capture sizes -%}(max-width: 680px) calc((100vw - 3rem) * {{ rmax }}), calc((min(100vw, 60rem) - 4rem) / 3 * {{ rmax }}){%- endcapture -%}
+    <a class="frame"{% if p.pos %} style="--pos: {{ p.pos }}"{% endif %} href="{{ base }}-2000.jpg" data-caption="{{ caption }}" data-srcset="{{ base }}-1200.jpg {{ w1200 }}w, {{ base }}-2000.jpg {{ w2000 }}w" data-webp="{{ base }}-1200.webp {{ w1200 }}w, {{ base }}-2000.webp {{ w2000 }}w">
+      <picture>
+        <source type="image/webp" srcset="{{ base }}-640.webp {{ w640 }}w, {{ base }}-1200.webp {{ w1200 }}w, {{ base }}-2000.webp {{ w2000 }}w" sizes="{{ sizes }}">
+        <img src="{{ base }}-1200.jpg" srcset="{{ base }}-640.jpg {{ w640 }}w, {{ base }}-1200.jpg {{ w1200 }}w, {{ base }}-2000.jpg {{ w2000 }}w" sizes="{{ sizes }}" width="{{ p.w }}" height="{{ p.h }}" alt="{{ p.alt }}" loading="lazy" decoding="async">
+      </picture>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endfor %}
+{% include lightbox.html %}

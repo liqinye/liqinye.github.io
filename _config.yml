@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Site
+# ---------------------------------------------------------------------------
+title: Liqin Ye
+author: Liqin Ye
+description: >-
+  Liqin Ye is a Machine Learning PhD candidate at Georgia Tech working on LLM agents,
+  LLM forecasting, and LLMs in finance.
+url: "https://liqinye.github.io"
+baseurl: ""
+lang: en
+timezone: America/New_York
+
+# ---------------------------------------------------------------------------
+# Profile (edit freely; everything here is rendered into the home page)
+# ---------------------------------------------------------------------------
+profile:
+  name: Liqin Ye
+  email: liqiny@gatech.edu
+  website: liqinye.github.io   # literal host for the CV page/PDF (site.url is localhost in development builds)
+  cv: /assets/pdf/liqin-cv.pdf
+  portrait: /assets/img/portrait.jpg
+  portrait_webp: /assets/img/portrait.webp
+  motto: Focus on Yourself   # hidden under the portrait, revealed by selecting it (index.html .motto)
+  notice: "I am looking for a research internship for Summer 2027. Feel free to reach out!"   # temporary, highlighted under the bio; one string wraps as one run (a list would give one highlighted line per item); delete the key to remove it. Wording follows the common PhD-homepage pattern, see liqinye-icon-candidates/final/notice/CONVENTIONS.md
+
+social:
+  scholar: "https://scholar.google.com/citations?user=YxM-Z3AAAAAJ"
+  github: "https://github.com/liqinye"
+  linkedin: "https://www.linkedin.com/in/liqin-ye-b48981212/"
+  x: "https://x.com/liqinye27"
+
+# ---------------------------------------------------------------------------
+# Build
+# ---------------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["lsquo", "rsquo", "ldquo", "rdquo"]
+  typographic_symbols: { hellip: "…", mdash: "—", ndash: "–" }
+permalink: pretty
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+defaults:
+  - scope: { path: "" }
+    values:
+      image: { path: /assets/img/og-image.png, width: 1200, height: 630 }
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .jekyll-cache
+  - "*.sh"

@@ -1,0 +1,30 @@
+# Newest first. `emoji` is decorative (hidden from screen readers); `icon` (an SVG in _includes/news-icons/, e.g. a project's own mark)
+# replaces the emoji when present; `text` supports inline HTML/Markdown links and should fit two lines at the 38rem measure (≈ 170 characters).
+# The AlphaBet and Forecast-Dojo items are the owner's own wording (Nov 2026), in the voice of their LinkedIn announcements; the project logos stay in front.
+- date: 2026-10-15
+  icon: alphabet.svg   # the AlphaBet mark (α + star), from the project site's favicon
+  text: "Can RL elevate LLMs' agentic forecasting capabilities? Our work, [AlphaBet](https://arxiv.org/abs/2610.22684), explores how reinforcement learning improves evidence gathering and probabilistic forecasting over time."
+- date: 2026-09-24
+  icon: forecast-dojo.svg   # the Forecast-Dojo swirl, the project site's favicon
+  text: "We built a time machine for AI forecasting agents, [<span class=\"nowrap\">Forecast-Dojo</span>](https://arxiv.org/abs/2609.28876). Agents can travel back in time, explore historical evidence, and forecast the future."
+- date: 2026-08-20
+  emoji: "📡"
+  text: "[LiveMacroEval](https://arxiv.org/abs/2608.30110) is accepted to EMNLP 2026 as a Main Conference Oral! A live, contamination-resistant benchmark of hourly LLM nowcasts for 16 U.S. macro indicators."
+- date: 2026-08-12
+  emoji: "🏅"
+  text: "Honored to be selected as a recipient of the **Workday AI PhD Fellowship**! Many thanks to the Workday AI Research team for supporting my work."
+- date: 2026-05-16
+  emoji: "📑"
+  text: "[IPO-Mine](https://arxiv.org/abs/2605.28714) is accepted to KDD 2026 Datasets & Benchmarks Track: an open toolkit and a 109k-filing, 76k-image dataset for section-structured analysis of long IPO documents."
+- date: 2026-05-11
+  emoji: "🎉"
+  text: "Joining the **Amazon Rufus** post-training team as an Applied Scientist Intern this summer. See you in Palo Alto!"
+- date: 2025-09-18
+  emoji: "🏦"
+  text: "[WCB](https://arxiv.org/abs/2505.17048) lands at NeurIPS 2025 Datasets & Benchmarks Track: 380k sentences from 25 central banks, the largest monetary-policy corpus to date, probing how LLMs read what central bankers really say."
+- date: 2025-07-07
+  emoji: "🧠"
+  text: "[Beyond the Reported Cutoff](https://arxiv.org/abs/2504.00042) is out at COLM 2025: 197k questions on U.S. public companies show that LLMs forget past financials and hallucinate most about the firms they sound surest about."
+- date: 2025-05-16
+  emoji: "🧹"
+  text: "[SiDyP](https://arxiv.org/abs/2505.19675) is accepted to KDD 2025 Research Track. Simplex diffusion with dynamic priors cleans up LLM-generated labels, lifting fine-tuned BERT classifiers by over 7% on average on auto-labeled NLP tasks."

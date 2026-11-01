@@ -1,0 +1,4 @@
+- role: Reviewer
+  items: ["ICLR 2027", "NeurIPS 2026, 2024", "ARR 2027, 2026, 2024", "KDD 2025", "Computational Economics"]
+- role: Volunteer
+  items: ["AI and Future of Finance Conference, Georgia Tech"]

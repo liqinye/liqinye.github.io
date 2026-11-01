@@ -1,0 +1,11 @@
+<svg viewBox="0 0 330 220" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <path class="m-ink" d="M165 38 L52 192 L278 192 Z"/>
+  <g class="m-faint-fill">
+    <circle cx="160" cy="54" r="2.2"/><circle cx="170" cy="60" r="2.2"/><circle cx="158" cy="66" r="2.2"/><circle cx="172" cy="50" r="2.2"/>
+    <circle cx="68" cy="178" r="2.2"/><circle cx="78" cy="182" r="2.2"/><circle cx="72" cy="170" r="2.2"/><circle cx="84" cy="174" r="2.2"/>
+    <circle cx="260" cy="180" r="2.2"/><circle cx="252" cy="172" r="2.2"/><circle cx="266" cy="170" r="2.2"/><circle cx="248" cy="184" r="2.2"/>
+  </g>
+  <path class="m-accent m-dot" d="M208 128 C 196 118, 190 104, 184 90 S 174 62, 167 50"/>
+  <circle class="m-ink" cx="208" cy="128" r="5"/>
+  <circle class="m-accent-fill" cx="167" cy="50" r="4.5"/>
+</svg>

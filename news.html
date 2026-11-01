@@ -1,0 +1,26 @@
+---
+layout: default
+title: News
+permalink: /news/
+description: News and updates from Liqin Ye.
+---
+<header class="page-head">
+  <h1>News</h1>
+  <p class="lede">Papers, fellowships, and where I am.</p>
+</header>
+{%- assign items = site.data.news | sort: "date" | reverse -%}
+{%- assign prev = "" -%}
+{%- for item in items -%}
+  {%- assign y = item.date | date: "%Y" -%}
+  {%- if y != prev -%}
+    {%- if prev != "" %}</ul>{% endif %}
+  <h2 class="year">{{ y }}</h2>
+  <ul class="ledger news" role="list">
+  {%- endif %}
+    <li>
+      <time class="row__key" datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %-d, %Y" }}</time>
+      <p class="row__text">{% if item.icon %}{% capture ni %}news-icons/{{ item.icon }}{% endcapture %}{% include {{ ni }} %} {% elsif item.emoji %}<span class="news__emoji" aria-hidden="true">{{ item.emoji }}</span> {% endif %}{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    </li>
+  {%- assign prev = y -%}
+{%- endfor %}
+</ul>

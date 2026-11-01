@@ -1,0 +1,57 @@
+/* ==========================================================================
+   The CV page. /cv/ (cv.html) embeds the owner's PDF (assets/pdf/liqin-cv.pdf — the compiled LaTeX document, served as is) in a
+   viewer frame under the page head: a slim document toolbar (file label; "Open in new tab" and "Download") on top of an
+   <object type="application/pdf"> with an <iframe> fallback. Loaded after site.css (front matter `stylesheet`), so it only adds:
+   all colours, fonts and rhythm come from the site tokens. The page head spans the shell like every other page's; the viewer is
+   capped at 48 rem.
+   ========================================================================== */
+
+/* ---------- page head: title and "last updated" (full shell width, like the other page heads) ---------- */
+.cv-head { max-width: 48rem; }
+.cv-head__updated { margin-top: .75rem; max-width: none; }
+.button { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem .6rem .85rem; border: 1px solid var(--rule); border-radius: var(--radius);
+  font: 500 .8125rem/1.2 var(--font-sans); letter-spacing: .01em; color: var(--ink); background: var(--paper); text-decoration: none; white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease, color .15s ease; }
+.button:hover { background: var(--surface); border-color: var(--ink-3); color: var(--ink); }
+.button .icon { width: 1rem; height: 1rem; flex: none; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- /cv/: the embedded PDF — a tall frame (82vh) with a hairline edge, radius and paper matte, like an embedded Drive
+   document, laid out as a column: the toolbar, then the document filling the rest.
+   The toolbar (.cv-viewer__bar) is the frame's own chrome, 2.75rem tall on the matte with a hairline under it: left, the file's
+   name in Inter with a small document glyph ("Liqin Ye · Curriculum Vitae"); right, two quiet icon + label buttons — "Open in new
+   tab" (target=_blank) and "Download" (download attribute) — that tint on hover. Below it an <object type="application/pdf"> with an
+   <iframe> of the same file nested as its fallback, both .cv-viewer__doc; #view=FitH&toolbar=0 asks the browser's viewer for a
+   page-wide fit without its own toolbar. Icons: the site's thin-outline set (24-unit grid, stroke 1.7, currentColor). ---------- */
+.cv-viewer { max-width: 48rem; height: 82vh; min-height: 32rem; margin-top: 2rem; display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+.cv-viewer__bar { flex: none; display: flex; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; min-height: 2.75rem; padding: .25rem .5rem .25rem 1rem; border-bottom: 1px solid var(--rule); background: var(--surface); }
+.cv-viewer__file { display: flex; align-items: center; gap: .55rem; min-width: 0; max-width: none; font: 500 .8125rem/1.2 var(--font-sans); letter-spacing: .005em; color: var(--ink-2); font-variation-settings: normal; }
+.cv-viewer__file .icon { color: var(--ink-3); }
+.cv-viewer__file-name { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cv-viewer__file .sep { padding: 0 .4em; }
+.cv-viewer__actions { flex: none; display: flex; align-items: center; gap: .125rem; }
+.cv-viewer__action { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .7rem; border-radius: var(--radius); font: 500 .8125rem/1.2 var(--font-sans); letter-spacing: .01em; color: var(--ink); text-decoration: none; white-space: nowrap; transition: background .15s ease, color .15s ease; }
+.cv-viewer__action:hover { background: var(--sunken); color: var(--accent-hover); }
+.cv-viewer__action:focus-visible { outline-offset: -2px; }   /* the frame clips overflow, so the focus ring sits inside the button */
+.cv-viewer .icon { width: 1rem; height: 1rem; flex: none; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.cv-viewer__doc { display: block; width: 100%; height: 100%; border: 0; }
+.cv-viewer > .cv-viewer__doc { flex: 1 1 auto; min-height: 0; height: auto; }   /* the document takes what the toolbar leaves */
+.cv-viewer__fallback { padding: 1rem; }
+/* phones: the viewer gives way to a card — the first page (assets/pdf/liqin-cv-p1.jpg) beside the title, the two buttons under them */
+.cv-card { display: none; }
+.cv-viewer__print { display: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 680px) {
+  .cv-viewer { display: none; }
+  .cv-card { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem 1.25rem; align-items: center; margin-top: 1.75rem; padding: 1.25rem; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); }
+  .cv-card__page { width: 100%; height: auto; aspect-ratio: 210 / 297; object-fit: cover; object-position: top; background: #fff; border: 1px solid var(--media-edge); border-radius: 2px; }   /* the PDF is A4 */
+  .cv-card__title { font-size: 1.0625rem; line-height: 1.35; font-weight: 500; color: var(--ink); max-width: none; }
+  .cv-card__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .5rem; max-width: none; }   /* spans the card under page + text: Open PDF and Download side by side from 360px up */
+  .cv-card__actions .button { flex: 1 1 8rem; justify-content: center; }   /* two equal buttons; they stack only when the card is narrower than ~17rem */
+}
+
+/* ---------- print: printing /cv/ itself prints the title and one line pointing at the PDF (the embedded viewer cannot print) ---------- */
+@media print {
+  .cv-viewer, .cv-card { display: none !important; }
+  .cv-viewer__print { display: block; margin-top: 1.5rem; }
+}

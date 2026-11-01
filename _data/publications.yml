@@ -1,0 +1,263 @@
+# Publications. `featured: true` entries appear as project cards (first-author work).
+# Author flags: self (highlight), equal (equal contribution, rendered with *).
+# venue is the short name without year; track is optional (e.g. Research Track).
+# `status`: published (venue line "KDD 2025 · Research Track") | preprint | under-review (both render as "Preprint · year"). `image` (3:2 jpg) is relative to /assets/img/projects/; `motif` (an inline SVG in _includes/motifs/) is the fallback when `image` is absent.
+# `media` (an animated GIF in the same folder) replaces `image` on the card, letterboxed in the 3:2 frame; `poster` is the still shown to visitors who prefer reduced motion.
+
+- key: alphabet
+  featured: true
+  title: "AlphaBet: Reinforcement Learning for LLM Event Forecasting Agents"
+  short: AlphaBet
+  authors:
+    - { name: Liqin Ye, self: true }
+    - { name: Rongzhi Zhang }
+    - { name: Xin Liu }
+    - { name: Zheng Li }
+    - { name: Yuan He }
+    - { name: Qingyu Yin }
+    - { name: Priyanka Nigam }
+    - { name: Chao Zhang }
+  venue: arXiv
+  year: 2026
+  date: 2026-10-15
+  status: under-review
+  summary: >-
+    One LLM policy learns to search, reason, and report calibrated probabilities at several dates
+    before an event resolves, so a single outcome supervises decisions under many information states.
+    Cuts Brier score from 0.731 to 0.626 on Forecast-Dojo.
+  image: alphabet.jpg
+  motif: alphabet.svg
+  links:
+    arxiv: "https://arxiv.org/abs/2610.22684"
+    code: "https://github.com/AlphaBet-Agent/AlphaBet"
+    website: "https://alphabet-agent.github.io/"
+    data: "https://huggingface.co/collections/liqinye/alphabet"
+
+- key: forecast-dojo
+  featured: true
+  title: "Forecast-Dojo: Replayable Environments for Benchmarking and Training LLM Forecasting Agents"
+  short: Forecast-Dojo
+  authors:
+    - { name: Liqin Ye, self: true, equal: true }
+    - { name: Haorui Wang, equal: true }
+    - { name: Fardin Ahmed }
+    - { name: Rongzhi Zhang }
+    - { name: Yuan He }
+    - { name: Ziyuan Lin }
+    - { name: Yanbin Yin }
+    - { name: Jing Peng }
+    - { name: Michael Galarnyk }
+    - { name: Sudheer Chava }
+    - { name: Chao Zhang }
+  venue: arXiv
+  year: 2026
+  date: 2026-09-24
+  status: under-review
+  summary: >-
+    1,568 resolved Polymarket events replayed as sequences of dated forecasting steps over 18.8 million
+    dated news articles, so agents can be evaluated, studied over time, and trained reproducibly.
+    Across 12 models, research tools help, yet every model still trails the market.
+  media: forecast-dojo.gif            # the replay animation (card media; without it the motif would show)
+  poster: forecast-dojo-poster.jpg    # its first frame, for prefers-reduced-motion
+  motif: forecast-dojo.svg
+  links:
+    arxiv: "https://arxiv.org/abs/2609.28876"
+    code: "https://github.com/Forecast-Dojo/Forecast-Dojo"
+    website: "https://forecast-dojo.github.io/"
+    data: "https://huggingface.co/datasets/liqinye/Forecast-Dojo"
+
+- key: evotd
+  featured: true
+  title: "Evolutionary Task Discovery: Advancing Reasoning Frontiers via Skill Composition and Complexity Scaling"
+  short: EvoTD
+  authors:
+    - { name: Liqin Ye, self: true }
+    - { name: Yanbin Yin }
+    - { name: Michael Galarnyk }
+    - { name: Yuzhao Heng }
+    - { name: Sudheer Chava }
+    - { name: Chao Zhang }
+  venue: arXiv
+  year: 2026
+  date: 2026-05-12
+  status: under-review
+  summary: >-
+    Treats reasoning-data synthesis as a directed search over algorithmic skills and complexity attributes.
+    Crossover composes skills, parametric mutation scales structure, and a zone-of-proximal-development
+    filter keeps tasks learnable, giving consistent gains across model families and scales.
+  image: evotd.jpg
+  motif: evotd.svg
+  links:
+    arxiv: "https://arxiv.org/abs/2605.11666"
+    code: "https://github.com/liqinye/EvoTD"
+
+- key: pre-control
+  featured: true
+  title: "Precise Attribute Intensity Control in Large Language Models via Targeted Representation Editing"
+  short: PRE-CONTROL
+  authors:
+    - { name: Rongzhi Zhang, equal: true }
+    - { name: Liqin Ye, self: true, equal: true }
+    - { name: Yuzhao Heng }
+    - { name: Xiang Chen }
+    - { name: Tong Yu }
+    - { name: Lingkai Kong }
+    - { name: Sudheer Chava }
+    - { name: Chao Zhang }
+  venue: arXiv
+  year: 2025
+  date: 2025-10-14
+  status: preprint
+  summary: >-
+    Reframes alignment as target reaching rather than maximization: a lightweight value function trained
+    with temporal-difference learning predicts final attribute scores from partial generations, and
+    gradient edits on hidden states steer outputs to exact user-specified intensities.
+  image: pre-control.jpg
+  motif: pre-control.svg
+  links:
+    arxiv: "https://arxiv.org/abs/2510.12121"
+    code: "https://github.com/Pre-Control/pre-control"
+
+- key: sidyp
+  featured: true
+  title: "Calibrating Pre-trained Language Classifiers on <span class=\"nowrap\">LLM-generated</span> Noisy Labels via Iterative Refinement"
+  short: SiDyP
+  authors:
+    - { name: Liqin Ye, self: true }
+    - { name: Agam Shah }
+    - { name: Chao Zhang }
+    - { name: Sudheer Chava }
+  venue: KDD
+  venue_long: ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+  track: Research Track
+  year: 2025
+  date: 2025-05-26
+  status: published
+  summary: >-
+    Simplex label diffusion with a dynamic prior retrieves plausible true-label candidates in embedding
+    space and iteratively denoises LLM-generated labels, lifting fine-tuned BERT classifiers by 7.2–7.3%
+    on average on zero- and few-shot auto-labeled NLP tasks.
+  image: sidyp.jpg
+  motif: sidyp.svg
+  links:
+    arxiv: "https://arxiv.org/abs/2505.19675"
+    code: "https://github.com/gtfintechlab/SiDyP"
+
+# ---- Co-authored work (compact list) ----
+
+- key: livemacroeval
+  featured: false
+  title: "Can LLMs Take the Pulse of the Economy? A <span class=\"nowrap\">Real-Time</span> Evaluation of LLM Nowcasts on Macroeconomic Indicators"
+  short: LiveMacroEval
+  authors:
+    - { name: Xinyue Zhao }
+    - { name: Ruiyi Zhang }
+    - { name: Liqin Ye, self: true }
+    - { name: Rui Cao }
+    - { name: Pengtao Xie }
+    - { name: Sudheer Chava }
+  venue: EMNLP
+  venue_long: Conference on Empirical Methods in Natural Language Processing
+  track: Main Conference · Oral
+  year: 2026
+  date: 2026-08-20
+  status: published
+  summary: A live, contamination-resistant benchmark of hourly LLM nowcasts for sixteen U.S. macroeconomic indicators.
+  links:
+    arxiv: "https://arxiv.org/abs/2608.30110"
+    code: "https://github.com/LiveMacroEval/LiveMacroEval"
+    website: "https://livemacroeval.github.io/"
+
+- key: ipo-mine
+  featured: false
+  title: "IPO-Mine: A Toolkit and Dataset for <span class=\"nowrap\">Section-Structured</span> Analysis of Long, Multimodal IPO Documents"
+  short: IPO-Mine
+  authors:
+    - { name: Michael Galarnyk }
+    - { name: Siddharth Lohani }
+    - { name: Vidhyakshaya Kannan }
+    - { name: Sagnik Nandi }
+    - { name: Aman Patel }
+    - { name: Liqin Ye, self: true }
+    - { name: Arnav Hiray }
+    - { name: Rutwik Routu }
+    - { name: Prasun Banerjee }
+    - { name: Siddhartha Somani }
+    - { name: Sudheer Chava }
+  venue: KDD
+  venue_long: ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+  track: Datasets & Benchmarks Track
+  year: 2026
+  date: 2026-05-16
+  status: published
+  summary: An open toolkit and a 109k-filing, 76k-image dataset for section-structured analysis of long IPO documents.
+  links:
+    arxiv: "https://arxiv.org/abs/2605.28714"
+    code: "https://github.com/gtfintechlab/IPO-Mine/"
+    website: "https://www.ipomine-demo.siddharthlohani.dev/"
+    data: "https://huggingface.co/collections/gtfintechlab/ipo-mine"
+
+- key: wcb
+  featured: false
+  title: "Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications"
+  short: WCB
+  authors:
+    - { name: Agam Shah }
+    - { name: Siddhant Sukhani }
+    - { name: Huzaifa Pardawala }
+    - { name: Saketh Budideti }
+    - { name: Riya Bhadani }
+    - { name: Rudra Gopal }
+    - { name: Siddhartha Somani }
+    - { name: Rutwik Routu }
+    - { name: Michael Galarnyk }
+    - { name: Soungmin Lee }
+    - { name: Arnav Hiray }
+    - { name: Akshar Ravichandran }
+    - { name: Eric Kim }
+    - { name: Pranav Aluru }
+    - { name: Joshua Zhang }
+    - { name: Sebastian Jaskowski }
+    - { name: Veer Guda }
+    - { name: Meghaj Tarte }
+    - { name: Liqin Ye, self: true }
+    - { name: Spencer Gosden }
+    - { name: Rachel Yuh }
+    - { name: Sloka Chava }
+    - { name: Sahasra Chava }
+    - { name: Dylan Patrick Kelly }
+    - { name: Aiden Chiang }
+    - { name: Harsit Mittal }
+    - { name: Sudheer Chava }
+  venue: NeurIPS
+  venue_long: Conference on Neural Information Processing Systems
+  track: Datasets & Benchmarks Track
+  year: 2025
+  date: 2025-09-18
+  status: published
+  summary: The largest monetary-policy corpus to date, 380k sentences from 25 central banks, with three annotated tasks.
+  links:
+    arxiv: "https://arxiv.org/abs/2505.17048"
+    code: "https://github.com/gtfintechlab/WorldCentralBanks"
+    website: "https://gcb-web-bb21b.web.app/"
+    data: "https://huggingface.co/gtfintechlab"
+
+- key: knowledge-gap
+  featured: false
+  title: "Beyond the Reported Cutoff: Where Large Language Models Fall Short on Financial Knowledge"
+  short: Knowledge Gap
+  authors:
+    - { name: Agam Shah }
+    - { name: Liqin Ye, self: true }
+    - { name: Sebastian Jaskowski }
+    - { name: Wei Xu }
+    - { name: Sudheer Chava }
+  venue: COLM
+  venue_long: Conference on Language Modeling
+  year: 2025
+  date: 2025-07-07
+  status: published
+  summary: 197k questions on U.S. public companies reveal that LLMs forget past financials and hallucinate most about the firms they know best.
+  links:
+    arxiv: "https://arxiv.org/abs/2504.00042"
+    code: "https://github.com/gtfintechlab/knowledge-gap"

@@ -1,0 +1,37 @@
+{%- comment -%} Renders an author list. Params: authors (array), max (int, default 10), count (bool: append "(n authors)"),
+nowrap (bool: wrap each name in span.nowrap so a surname never lands alone on the next line — /publications/ passes it).
+Up to `max` authors are listed in full. Longer lists are elided but ALWAYS keep the last author and the owner (.self):
+the first three, "…", the owner if not already shown, "…", the last author — e.g. "Liqin Ye*, Haorui Wang*, Fardin Ahmed,
+… Chao Zhang" or "Michael Galarnyk, Siddharth Lohani, Vidhyakshaya Kannan, … Liqin Ye, … Sudheer Chava". Elision is only for
+narrow text columns: cards pass max=6; /publications/ (full-width line) passes max=100 = everyone; count=true (unused now) appends "(n authors)". Each "…" is a button (.authors__more) that reveals the full list, kept in span.authors__full next to the short one (one-way; script at
+the end of footer.html). {%- endcomment -%}
+{%- assign authors = include.authors -%}
+{%- assign max = include.max | default: 10 -%}
+{%- assign n = authors | size -%}
+{%- capture eq -%}<sup class="eq" title="Equal contribution">*<span class="visually-hidden"> (equal contribution)</span></sup>{%- endcapture -%}
+{%- capture full -%}
+  {%- for a in authors -%}
+    {%- if a.self %}<span class="self{% if include.nowrap %} nowrap{% endif %}">{{ a.name }}</span>{% elsif include.nowrap %}<span class="nowrap">{{ a.name }}</span>{% else %}{{ a.name }}{% endif -%}
+    {%- if a.equal %}{{ eq }}{% endif -%}
+    {%- unless forloop.last %}, {% endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if n <= max -%}
+  {{- full -}}
+{%- else -%}
+  <span class="authors authors--elided"><span class="authors__short">
+  {%- assign gap = false -%}
+  {%- for a in authors -%}
+    {%- if forloop.index0 < 3 or forloop.last or a.self -%}
+      {%- if gap %}<button type="button" class="ellipsis authors__more" aria-expanded="false" aria-label="Show all {{ n }} authors" title="Show all {{ n }} authors">…</button> {% endif -%}
+      {%- assign gap = false -%}
+      {%- if a.self %}<span class="self{% if include.nowrap %} nowrap{% endif %}">{{ a.name }}</span>{% elsif include.nowrap %}<span class="nowrap">{{ a.name }}</span>{% else %}{{ a.name }}{% endif -%}
+      {%- if a.equal %}{{ eq }}{% endif -%}
+      {%- unless forloop.last %}, {% endunless -%}
+    {%- else -%}
+      {%- assign gap = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if include.count %}<span class="meta"> ({{ n }} authors)</span>{% endif -%}
+  </span><span class="authors__full" hidden>{{ full }}</span></span>
+{%- endif -%}

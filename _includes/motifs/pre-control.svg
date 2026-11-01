@@ -1,0 +1,13 @@
+<svg viewBox="0 0 330 220" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <line class="m-faint" x1="40" y1="166" x2="290" y2="166"/>
+  <line class="m-faint m-dash" x1="122" y1="54" x2="122" y2="166"/>
+  <line class="m-faint m-dash" x1="218" y1="54" x2="218" y2="166"/>
+  <path class="m-ink m-dash" d="M44 166 C 70 164, 78 100, 92 100 S 114 164, 140 166"/>
+  <path class="m-ink m-dash" d="M196 166 C 222 164, 232 108, 248 108 S 276 164, 300 166"/>
+  <path class="m-accent" d="M86 166 C 104 164, 108 70, 122 70 S 140 164, 158 166"/>
+  <path class="m-ink" d="M182 166 C 200 164, 204 70, 218 70 S 236 164, 254 166"/>
+  <rect class="m-seal-fill" x="118.5" y="163" width="7" height="7" rx="1.2"/>
+  <rect class="m-seal-fill" x="214.5" y="163" width="7" height="7" rx="1.2"/>
+  <path class="m-ink" d="M98 88 L112 88 M108 84 L112 88 L108 92"/>
+  <path class="m-ink" d="M242 94 L228 94 M232 90 L228 94 L232 98"/>
+</svg>

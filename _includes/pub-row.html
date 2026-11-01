@@ -1,0 +1,12 @@
+{%- comment -%} One entry on /publications/: title (links to the project page, else arXiv) / authors / venue line / link chips.
+The author line spans the full width, so every author is listed (max=100, above any list; cards elide at 6, the CV at 12) and each
+name is kept on one line (nowrap=true) so a long list never strands a surname.
+Param: pub. Used by publications.html under each year heading. {%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- assign primary = pub.links.website | default: pub.links.arxiv -%}
+<li class="pub" id="{{ pub.key }}">
+  <h3 class="pub__title"><a href="{{ primary }}" target="_blank" rel="noopener">{{ pub.title }}</a></h3>
+  <p class="pub__authors meta">{% include authors.html authors=pub.authors max=100 nowrap=true %}</p>
+  <p class="pub__meta meta">{% include pubmeta.html pub=pub %}</p>
+  <p class="pub__links">{% include links.html links=pub.links short=pub.short %}</p>
+</li>

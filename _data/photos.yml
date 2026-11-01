@@ -1,0 +1,30 @@
+# Photo collections shown on the Misc page (/misc/). Files live in /assets/img/photos/ as NAME-640|1200|2000.{jpg,webp}.
+# `title` is the place as "City, ST" (the right side of the heading row shows only `date`); photos render as equal square tiles
+# (centre crop; `pos: "x% y%"` on a photo moves the crop), the lightbox shows the full frame.
+camera: Fujifilm X-T5
+lens: XF 16-80mm F4 R OIS WR
+collections:
+  - title: "Laguna Beach, CA"
+    date: February 2024
+    photos:
+      - { file: laguna1, alt: "Tall palms silhouetted on a bluff above the Pacific at sunset, an island on the horizon", w: 2845, h: 3315, focal: "80", aperture: "4", shutter: "1/125" }
+      - { file: laguna2, alt: "Sunset over the ocean framed by palm leaves", w: 4343, h: 4686, focal: "22.3", aperture: "4", shutter: "1/500" }
+      - { file: laguna3, alt: "A crescent moon in an orange dusk sky over the sea, a palm frond at the left edge", w: 4225, h: 3689, focal: "76.3", aperture: "4", shutter: "1/125" }
+  - title: "Fred W. Symmes Chapel, SC"
+    date: March 2024
+    photos:
+      - { file: crossing1, alt: "A cross silhouetted against sunrise over the Blue Ridge Mountains", w: 7019, h: 4344, focal: "69.8", aperture: "4", shutter: "1/250" }
+      - { file: crossing2, alt: "The chapel cross silhouetted beside the rising sun over hazy ridges", w: 5263, h: 3534, focal: "44.7", aperture: "8", shutter: "1/250" }
+      - { file: crossing3, alt: "The cross against a pastel sunrise, layered blue ridges below", w: 6287, h: 4058, focal: "48.5", aperture: "4", shutter: "1/250" }
+  - title: "Gibbs Gardens, GA"
+    date: March 2024
+    photos:
+      - { file: garden1, alt: "A wooden gazebo and red-leafed spring trees reflected in a still pond", w: 4343, h: 6338, focal: "30.8", aperture: "4.5", shutter: "1/250" }
+      - { file: garden2, alt: "A field of yellow daffodils", w: 4343, h: 6155, focal: "80", aperture: "4", shutter: "1/250" }
+      - { file: garden3, alt: "A pink Japanese maple above a small stone waterfall and stream", w: 4343, h: 5702, focal: "80", aperture: "4", shutter: "1/250" }
+  - title: "College Park, MD"
+    date: March 2024
+    photos:
+      - { file: car1, alt: "Front of a black Camaro in a parking deck, one headlight lit", w: 4620, h: 4784, focal: "22.3", aperture: "4", shutter: "1/125" }
+      - { file: car2, alt: "A yellow BMW M4 and a black Camaro on a rooftop at dusk", w: 6237, h: 3459, focal: "16", aperture: "4.5", shutter: "1/60" }
+      - { file: car3, alt: "Front of a lime-green BMW M4 in a parking deck", w: 3072, h: 3660 }

@@ -1,0 +1,33 @@
+{%- assign pub = include.pub -%}
+{%- assign primary = pub.links.website | default: pub.links.arxiv -%}
+<article class="project" id="{{ pub.key }}">
+  {%- comment -%} The figure in a fixed 3:2 frame with a paper matte. `media:` (an animated GIF, assets/img/projects/) is shown
+  letterboxed (object-fit: contain, multiplied onto the matte) with `poster:` as the still that visitors who prefer reduced motion
+  get instead — the <picture> source means their browser never fetches the animation. Otherwise `image:` (a 3:2 jpg) is shown as a
+  photograph; an .svg image or the `motif` key falls back to the inline motif. Decorative duplicate of the title link, so it is
+  hidden from AT. {%- endcomment -%}
+  <div class="project__figure">
+  <a class="project__media{% if pub.media %} project__media--contain{% endif %}" href="{{ primary }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+    {%- if pub.media -%}
+      <picture>
+        {%- if pub.poster %}<source srcset="{{ '/assets/img/projects/' | append: pub.poster | relative_url }}" media="(prefers-reduced-motion: reduce)">{% endif -%}
+        <img src="{{ '/assets/img/projects/' | append: pub.media | relative_url }}" width="1000" height="563" alt="" decoding="async">
+      </picture>
+    {%- elsif pub.image and pub.image contains ".svg" -%}
+      {%- assign motif = "motifs/" | append: pub.image -%}
+      {% include {{ motif }} %}
+    {%- elsif pub.image -%}
+      <img src="{{ '/assets/img/projects/' | append: pub.image | relative_url }}" width="1200" height="800" alt="" decoding="async">
+    {%- elsif pub.motif -%}
+      {%- assign motif = "motifs/" | append: pub.motif -%}
+      {% include {{ motif }} %}
+    {%- endif -%}
+  </a>
+  </div>
+  <div class="project__body">
+    <h3 class="project__title"><a href="{{ primary }}" target="_blank" rel="noopener">{{ pub.title }}</a></h3>
+    <p class="project__authors meta">{% include authors.html authors=pub.authors max=6 %}</p>
+    <p class="project__meta meta">{% include pubmeta.html pub=pub %}</p>
+    <p class="project__links">{% include links.html links=pub.links short=pub.short %}</p>
+  </div>
+</article>

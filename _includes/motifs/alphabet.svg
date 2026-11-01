@@ -1,0 +1,10 @@
+<svg viewBox="0 0 330 220" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <line class="m-faint" x1="40" y1="172" x2="292" y2="172"/>
+  <g class="m-faint"><line x1="60" y1="168" x2="60" y2="176"/><line x1="100" y1="168" x2="100" y2="176"/><line x1="140" y1="168" x2="140" y2="176"/><line x1="180" y1="168" x2="180" y2="176"/><line x1="220" y1="168" x2="220" y2="176"/><line x1="260" y1="168" x2="260" y2="176"/></g>
+  <line class="m-faint m-dash" x1="292" y1="48" x2="292" y2="172"/>
+  <g class="m-faint-fill"><rect x="94" y="150" width="12" height="3" rx="1"/><rect x="94" y="144" width="12" height="3" rx="1"/><rect x="174" y="150" width="12" height="3" rx="1"/><rect x="174" y="144" width="12" height="3" rx="1"/><rect x="174" y="138" width="12" height="3" rx="1"/><rect x="254" y="150" width="12" height="3" rx="1"/></g>
+  <path class="m-ink m-dash" d="M60 118 C 80 112, 92 128, 100 124 S 128 108, 140 116 S 170 128, 180 120 S 210 104, 220 110 S 250 122, 260 116"/>
+  <path class="m-accent" d="M60 126 C 78 124, 90 118, 100 114 S 126 104, 140 100 S 166 92, 180 84 S 206 72, 220 68 S 248 60, 260 58"/>
+  <g class="m-accent-fill"><circle cx="60" cy="126" r="3.5"/><circle cx="100" cy="114" r="3.5"/><circle cx="140" cy="100" r="3.5"/><circle cx="180" cy="84" r="3.5"/><circle cx="220" cy="68" r="3.5"/><circle cx="260" cy="58" r="3.5"/></g>
+  <rect class="m-seal-fill" x="287" y="43" width="10" height="10" rx="1.5"/>
+</svg>

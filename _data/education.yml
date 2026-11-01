@@ -1,0 +1,13 @@
+- institution: Georgia Institute of Technology
+  location: Atlanta, GA
+  logo: gt   # assets/img/logos/gt.png (192×192 colour seal, trimmed from gt-logo.png; see README → "Organisation logos")
+  degrees:
+    - { degree: PhD in Machine Learning, period: 2024 – Present }
+    - { degree: MS in Computer Science, period: 2023 – 2025 }
+  note: "PhD expected 2029"
+- institution: University of California, Irvine
+  location: Irvine, CA
+  logo: uci   # assets/img/logos/uci.png (192×192 colour seal, trimmed from uci-logo.png)
+  degrees:
+    - { degree: BS in Computer Science, period: 2019 – 2023 }
+  note: "Magna cum laude"

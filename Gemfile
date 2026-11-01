@@ -1,0 +1,9 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4"
+gem "webrick", "~> 1.8"   # needed by `jekyll serve` on Ruby 3+
+
+group :jekyll_plugins do
+  gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
+end
