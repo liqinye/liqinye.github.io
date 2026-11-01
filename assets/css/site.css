@@ -341,6 +341,11 @@ sup.eq { font-size: .75em; line-height: 0; vertical-align: .35em; }
    the α 25.5/29), so they read a touch lighter than a full-bleed emoji. The marks are inlined (_includes/news-icons/), so the
    AlphaBet α is stroked in currentColor and follows the text ink in both themes; the Forecast-Dojo swirl keeps its own orange. No tile. */
 .news__icon { display: inline-block; width: 1.25em; height: 1.25em; vertical-align: -.25em; }
+/* Home page: five items, then one quiet "…" row (same affordance as the elided author lists) that reveals the earlier ones in place. */
+.news__extra[hidden] { display: none; }
+.news__more-row { padding: .55rem 0 .75rem; }
+.news__more { font: inherit; font-size: 1.15em; color: var(--ink-3); background: none; border: 0; padding: 0 .4em; margin: 0 -.4em; line-height: 1; letter-spacing: .16em; border-radius: 3px; cursor: pointer; transition: color .15s ease, background .15s ease; }
+.news__more:hover, .news__more:focus-visible { color: var(--accent-meta); background: var(--chip-website-bg); }
 /* year headings (news and publications pages): a quiet divider one step below the 1.75rem section titles */
 .year { margin-top: 2.5rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule); font-size: 1.25rem; color: var(--ink-2); }
 .year:first-of-type { margin-top: 2rem; }

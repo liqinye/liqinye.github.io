@@ -55,3 +55,13 @@
   });
 })();
 </script>
+<script>
+(function () {   /* home-page news: the "…" row reveals the earlier items (one-way) */
+  document.querySelectorAll('.news__more').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var list = b.closest('.news'); list.querySelectorAll('.news__extra').forEach(function (li) { li.hidden = false; });
+      var row = b.closest('li'); row.parentNode.removeChild(row);
+    });
+  });
+})();
+</script>

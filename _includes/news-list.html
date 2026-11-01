@@ -1,11 +1,14 @@
-{%- comment -%} Param: limit (int, optional). Each item opens with a decorative glyph: `icon` (an inline SVG in _includes/news-icons/, a project's own mark, 20 × 20px like an emoji's ink) when set, else `emoji`. {%- endcomment -%}
+{%- comment -%} Param: limit (int, optional): items past it are rendered hidden behind a final "…" row (button.news__more) that reveals them in place, one-way, like the elided author lists. Each item opens with a decorative glyph: `icon` (an inline SVG in _includes/news-icons/, a project's own mark, 20 × 20px like an emoji's ink) when set, else `emoji`. {%- endcomment -%}
 {%- assign items = site.data.news | sort: "date" | reverse -%}
-{%- if include.limit -%}{%- assign items = items | slice: 0, include.limit -%}{%- endif -%}
+{%- assign n = items | size -%}
 <ul class="ledger news" role="list">
 {%- for item in items %}
-  <li>
+  <li{% if include.limit and forloop.index > include.limit %} class="news__extra" hidden{% endif %}>
     <time class="row__key" datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %-d, %Y" }}</time>
     <p class="row__text">{% if item.icon %}{% capture ni %}news-icons/{{ item.icon }}{% endcapture %}{% include {{ ni }} %} {% elsif item.emoji %}<span class="news__emoji" aria-hidden="true">{{ item.emoji }}</span> {% endif %}{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
   </li>
 {%- endfor %}
+{%- if include.limit and n > include.limit %}
+  <li class="news__more-row"><span class="row__key" aria-hidden="true"></span><p class="row__text"><button type="button" class="ellipsis news__more" aria-expanded="false" aria-label="Show {{ n | minus: include.limit }} earlier items" title="Show earlier items">…</button></p></li>
+{%- endif %}
 </ul>

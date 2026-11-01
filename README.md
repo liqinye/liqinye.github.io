@@ -11,7 +11,7 @@ a few Liquid includes, and YAML data files that hold all the content.
 | Bio paragraphs | `_includes/bio.md` (Markdown) |
 | Name, email, website host (for the CV page/PDF), CV path, social links | `_config.yml` → `profile:` and `social:` |
 | Publications (featured cards on the home page; the full list on `/publications/`) | `_data/publications.yml` |
-| News (the home-page section lists every item; there is no separate page) | `_data/news.yml` (newest first; each item opens with a decorative glyph hidden from screen readers — `icon:` (an inline SVG in `_includes/news-icons/`, a project's own mark; see "News marks") when set, else `emoji:`; `text` is written in the active voice, Markdown links allowed, and should fit two lines at the 38rem measure, ≈ 170 characters) |
+| News (the home-page section shows the five newest items; a quiet "…" row reveals the rest in place, no separate page) | `_data/news.yml` (newest first; each item opens with a decorative glyph hidden from screen readers — `icon:` (an inline SVG in `_includes/news-icons/`, a project's own mark; see "News marks") when set, else `emoji:`; `text` is written in the active voice, Markdown links allowed, and should fit two lines at the 38rem measure, ≈ 170 characters) |
 | Experience / Education (each row starts with the organisation's logo in its own colours) / Teaching / Service / Honors | `_data/*.yml` — logos: see "Organisation logos" |
 | Misc page (the photo collections: equal square tiles, three per place; the lede is the owner's text from the old site, verbatim, set full-width like the headings) | `misc.html` (title, lede), `_data/photos.yml` (`title` as "City, ST", `date` on the right, photos with optional `pos`) + images in `assets/img/photos/` |
 | Temporary notice between the bio and the icon row ("I am looking for a research internship for Summer 2027. Feel free to reach out!"): a centred row of the hero grid (`notice` area, kept short enough for one line in the text column), highlighter-style, `text-wrap: balance` when a narrow viewport forces a wrap; the wording follows the usual PhD-homepage pattern (research notes: `~/Desktop/liqinye-icon-candidates/final/notice/CONVENTIONS.md`) | `_config.yml` → `profile.notice` (a list of lines or one string, Markdown allowed; delete the key to remove), `index.html` `.notice` |
@@ -199,7 +199,7 @@ To replace the current site with this one:
 Old URLs keep working: `/publications/` is a real page again, `/#research` still lands on "Selected Publications",
 `/photography/` → `/misc/` (the page is now called Misc; `redirects/photography.html`), and the old al-folio paths that Google may still hold —
 `/blog/` → `/`, `/projects/` → `/publications/`, `/books/` → `/misc/`, and `/news/` → `/#news` since the separate News page was dropped on
-2026-11-01 — the home section now lists every item (`redirects/*.html`, all `noindex` with a canonical to the target); `/cv/` embeds `assets/pdf/liqin-cv.pdf`,
+2026-11-01 — the home section lists the five newest items with a "…" row for the rest (`redirects/*.html`, all `noindex` with a canonical to the target); `/cv/` embeds `assets/pdf/liqin-cv.pdf`,
 which the viewer's toolbar also opens in a new tab and downloads.
 
 ## Things to confirm
