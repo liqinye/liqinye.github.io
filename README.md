@@ -197,7 +197,8 @@ To replace the current site with this one:
    branch (if any) can be deleted after the first green deploy.
 
 Old URLs keep working: `/publications/` is a real page again, `/#research` still lands on "Selected Publications",
-`/photography/` → `/misc/` (the page is now called Misc; `redirects/photography.html`); `/cv/` embeds `assets/pdf/liqin-cv.pdf`,
+`/photography/` → `/misc/` (the page is now called Misc; `redirects/photography.html`), and the old al-folio paths that Google may still hold —
+`/blog/` → `/`, `/projects/` → `/publications/`, `/books/` → `/misc/` (`redirects/*.html`, all `noindex` with a canonical to the target); `/cv/` embeds `assets/pdf/liqin-cv.pdf`,
 which the viewer's toolbar also opens in a new tab and downloads.
 
 ## Things to confirm

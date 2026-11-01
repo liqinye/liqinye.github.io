@@ -46,6 +46,9 @@ defaults:
   - scope: { path: "" }
     values:
       image: { path: /assets/img/og-image.png, width: 1200, height: 630 }
+  - scope: { path: "google43cd256a8fd6ad8e.html" }   # Search Console verification file: served, but kept out of the sitemap
+    values:
+      sitemap: false
 exclude:
   - Gemfile
   - Gemfile.lock
