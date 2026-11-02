@@ -1,5 +1,6 @@
 # Publications. `featured: true` entries appear as project cards (first-author work).
 # Author flags: self (highlight), equal (equal contribution, rendered with *).
+# `date` only orders the lists (newest first on /publications/ and among the featured cards); it is not displayed, so it may be nudged to place an entry (see EPSBench).
 # venue is the short name without year; track is optional (e.g. Research Track).
 # `status`: published (venue line "KDD 2025 · Research Track") | preprint | under-review (both render as "Preprint · year"). `image` (3:2 jpg) is relative to /assets/img/projects/; `motif` (an inline SVG in _includes/motifs/) is the fallback when `image` is absent.
 # `media` (an animated GIF in the same folder) replaces `image` on the card, letterboxed in the 3:2 frame; `poster` is the still shown to visitors who prefer reduced motion.
@@ -144,6 +145,26 @@
     code: "https://github.com/gtfintechlab/SiDyP"
 
 # ---- Co-authored work (compact list) ----
+
+- key: epsbench
+  featured: false
+  title: "EPSBench: Benchmarking LLM Agents for Earnings Forecasting"
+  short: EPSBench
+  authors:
+    - { name: Yanbin Yin }
+    - { name: Chuyu Xu }
+    - { name: Liqin Ye, self: true }
+    - { name: Jing Peng }
+    - { name: Chao Zhang }
+  venue: arXiv
+  year: 2026
+  date: 2026-09-23   # ordering only: the owner wants EPSBench listed right after Forecast-Dojo (2026-09-24); arXiv v1 was 2026-10-28
+  posted: 2026-10-28
+  status: under-review
+  summary: A benchmark of 149 firm-quarters from 86 US companies where LLM agents turn filings, call transcripts and news into cited income-statement drivers and GAAP EPS forecasts.
+  links:
+    arxiv: "https://arxiv.org/abs/2610.38293"
+    code: "https://github.com/JadeXu16/epsbench"
 
 - key: livemacroeval
   featured: false

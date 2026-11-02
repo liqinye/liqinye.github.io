@@ -56,11 +56,15 @@
 })();
 </script>
 <script>
-(function () {   /* home-page news: the "…" row reveals the earlier items (one-way) */
-  document.querySelectorAll('.news__more').forEach(function (b) {
+(function () {   /* home-page news: the chevron under the list shows the earlier items and folds them away again */
+  document.querySelectorAll('.news__toggle').forEach(function (b) {
+    var list = b.closest('section') && b.closest('section').querySelector('.news'); if (!list) return;
     b.addEventListener('click', function () {
-      var list = b.closest('.news'); list.querySelectorAll('.news__extra').forEach(function (li) { li.hidden = false; });
-      var row = b.closest('li'); row.parentNode.removeChild(row);
+      var open = b.getAttribute('aria-expanded') === 'true';
+      list.querySelectorAll('.news__extra').forEach(function (li) { li.hidden = open; });
+      b.setAttribute('aria-expanded', String(!open));
+      b.setAttribute('aria-label', open ? b.dataset.more : b.dataset.less); b.title = open ? 'Earlier news' : 'Fewer';
+      if (open) list.scrollIntoView({ block: 'nearest' });
     });
   });
 })();
